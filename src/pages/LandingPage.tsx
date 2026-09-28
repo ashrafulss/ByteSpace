@@ -4,7 +4,8 @@ import searchicon from "../assets/search.png";
 import yellowspiral from "../assets/yellow-spiral.png";
 import whitespiral from "../assets/white-spiral.png";
 import Header from "../components/Header";
-
+import LogoTicker from "../components/LogoTicker";
+import whiteTorus from "../assets/white-circle.png";
 const Home: React.FC = () => {
   return (
     <>
@@ -27,7 +28,7 @@ const Home: React.FC = () => {
 
         <section
           id="home"
-          className="relative z-10 min-h-[calc(100vh-120px)] overflow-hidden"
+          className="relative z-10 min-h-[calc(100vh-120px)] overflow-hidden -bottom-7"
         >
           <img
             src={yellowspiral}
@@ -83,6 +84,13 @@ const Home: React.FC = () => {
             </div>
           </div>
 
+          <img
+            src={whiteTorus}
+            alt=""
+            aria-hidden="true"
+            className="pointer-events-none absolute left-[10%] bottom-[1%] z-21 w-[343.68px]  h-[343.68px] object-contain select-none "
+          />
+
           <div className="relative z-20 mx-auto mt-14 h-[480px] max-w-[1000px] ">
             <div className="absolute left-1/2 h-[1149px] w-[1149px] -translate-x-1/2  bg-[#ccff00] rounded-full border-[330px] border-[#ccff00] bg-transparent" />
             <img
@@ -92,6 +100,7 @@ const Home: React.FC = () => {
             />
           </div>
         </section>
+        <LogoTicker />
       </main>
     </>
   );
