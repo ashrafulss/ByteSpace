@@ -82,14 +82,14 @@ const Home: React.FC = () => {
           </div>
         </div>
 
-        {/* <div className="relative z-20 mx-auto mt-10 h-[480px] max-w-[1000px]">
-          <div className="absolute bottom-[-160px] left-1/2 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-[#ccff00] sm:h-[680px] sm:w-[680px]" />
+        <div className="relative z-20 mx-auto mt-14 h-[480px] max-w-[1000px] ">
+          <div className="absolute left-1/2 h-[1149px] w-[1149px] -translate-x-1/2  bg-[#ccff00] rounded-full" />
           <img
             src={studentImage}
             alt="Student"
-            className="absolute bottom-0 left-1/2 z-30 w-[420px] -translate-x-1/2 object-contain"
+            className="absolute bottom-0 left-1/2 z-30 w-[578px] h-[541px] -translate-x-1/2 object-contain"
           />
-        </div> */}
+        </div>
       </section>
     </main>
   );
