@@ -134,14 +134,34 @@ const Home: React.FC = () => {
             className="pointer-events-none absolute left-[10%] bottom-[1%] z-21 w-[343.68px]  h-[343.68px] object-contain select-none "
           />
 
-          <div className="absolute left-[30%] bottom-[35%] z-30 rounded-2xl bg-white px-6 py-4 shadow-2xl transition-transform hover:scale-105">
-            <h3 className="text-lg font-bold text-gray-900">
+          <div className="absolute left-[31%] bottom-[35%] z-30 rounded-3xl bg-white px-6 py-5 shadow-2xl transition-transform hover:scale-105">
+            <h3 className="text-xl font-bold text-gray-900">
               {cardData.title}
             </h3>
             <p className="mt-1 text-sm font-medium text-gray-400">
               {cardData.coursesCount} Courses &bull; {cardData.studentsCount}+
               Students
             </p>
+          </div>
+
+          {/* Right Card: Learning Progress */}
+          <div className="absolute right-[30%] bottom-[30%] z-30 w-64 rounded-3xl bg-white p-6 shadow-2xl transition-transform hover:scale-105">
+            <p className="text-sm font-medium text-gray-500">
+              Learning Progress
+            </p>
+
+            <h2 className="mt-2 text-5xl font-black tracking-tight text-gray-900">
+              {cardData.learningProgress}%
+            </h2>
+
+            {/* Progress Bar Track */}
+            <div className="mt-5 h-3 w-full rounded-full bg-gray-100 overflow-hidden">
+              {/* Active Fill */}
+              <div
+                className="h-full rounded-full bg-[#CCFF00] transition-all duration-500"
+                style={{ width: `${cardData.learningProgress}%` }}
+              />
+            </div>
           </div>
 
           <div className="relative z-20 mx-auto mt-14 h-[480px] max-w-[1000px] ">

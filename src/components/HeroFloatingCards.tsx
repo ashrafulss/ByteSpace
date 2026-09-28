@@ -12,15 +12,6 @@ export const HeroFloatingCards: React.FC = () => {
       </div>
 
       {/* ================= 2. LEARNING PROGRESS CARD (Top Right) ================= */}
-      <div className="absolute right-[10%] -bottom-[50%] z-30 w-72 rounded-2xl bg-white px-6 py-5 shadow-2xl transition-transform hover:scale-105">
-        <p className="text-sm font-semibold text-gray-600">Learning Progress</p>
-        <p className="mt-1 text-4xl font-extrabold text-gray-900">55%</p>
-
-        {/* Progress Bar */}
-        <div className="mt-3 h-2.5 w-full overflow-hidden rounded-full bg-gray-100">
-          <div className="h-full w-[55%] rounded-full bg-[#ccff00]" />
-        </div>
-      </div>
 
       {/* ================= 3. HAPPY STUDENTS CARD (Bottom Left) ================= */}
       <div className="absolute bottom-[5%] left-[0%] z-30 rounded-2xl bg-white p-5 shadow-2xl transition-transform hover:scale-105">
