@@ -6,6 +6,9 @@ import whitespiral from "../assets/white-spiral.png";
 import Header from "../components/Header";
 import LogoTicker from "../components/LogoTicker";
 import whiteTorus from "../assets/white-circle.png";
+import yellowPill from "../assets/yellow-rectangle.png";
+import whitePyramid from "../assets/white-triangle.png";
+import whiteSpring from "../assets/spiral.png";
 const Home: React.FC = () => {
   return (
     <>
@@ -83,6 +86,29 @@ const Home: React.FC = () => {
               </button>
             </div>
           </div>
+
+          <img
+            src={yellowPill}
+            alt=""
+            aria-hidden="true"
+            className="pointer-events-none absolute right-[-80px] top-[10%] z-0 w-[370px] h-[370px] object-contain select-none"
+          />
+
+          {/* 2. White Pyramid (Middle Right) */}
+          <img
+            src={whitePyramid}
+            alt=""
+            aria-hidden="true"
+            className="pointer-events-none absolute right-[18%] top-[38%] z-10 w-[188.93px] h-[188.93px] object-contain select-none"
+          />
+
+          {/* 3. White Spring / Zigzag (Bottom Right) */}
+          <img
+            src={whiteSpring}
+            alt=""
+            aria-hidden="true"
+            className="pointer-events-none absolute right-[10%] bottom-[5%] z-10 w-[331.53px] h-[331.53px] object-contain select-none"
+          />
 
           <img
             src={whiteTorus}
