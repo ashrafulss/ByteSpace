@@ -1,10 +1,10 @@
 import React from "react";
 // Import exported SVG/PNG logos from Figma, or use imported SVG assets
-import logo1 from "../assets/logo.png";
-import logo2 from "../assets/logo.png";
-import logo3 from "../assets/logo.png";
-import logo4 from "../assets/logo.png";
-import logo5 from "../assets/logo.png";
+import logo1 from "../assets/logoipsum-1.png";
+import logo2 from "../assets/logoipsum-2.png";
+import logo3 from "../assets/logoipsum-3.png";
+import logo4 from "../assets/logoipsum-4.png";
+import logo5 from "../assets/logoipsum-5.png";
 
 export const LogoTicker: React.FC = () => {
   const logos = [
@@ -23,13 +23,16 @@ export const LogoTicker: React.FC = () => {
           {logos.map((logo) => (
             <div
               key={logo.id}
-              className="flex items-center justify-center grayscale opacity-70 transition-all duration-300 hover:grayscale-0 hover:opacity-100"
+              className="flex items-center justify-center grayscale opacity-70 gap-2 transition-all duration-300 hover:grayscale-0 hover:opacity-100"
             >
               <img
                 src={logo.src}
                 alt={logo.alt}
                 className="h-8 w-auto object-contain sm:h-9 md:h-10"
               />
+              <span className="font-clash text-[24px] font-bold leading-none tracking-normal text-black/70 transition-all duration-300 hover:text-black">
+                Logoipsum
+              </span>
             </div>
           ))}
         </div>
