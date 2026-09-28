@@ -11,6 +11,7 @@ import whitePyramid from "../assets/white-triangle.png";
 import whiteSpring from "../assets/spiral.png";
 import { useCategory } from "../hooks/useCategory";
 import Loading from "../components/Loading";
+import HappyStudentsCard from "../components/HappyStudentsCard";
 
 const Home: React.FC = () => {
   const { data: cardData, loading, error } = useCategory();
@@ -164,6 +165,7 @@ const Home: React.FC = () => {
             </div>
           </div>
 
+          <HappyStudentsCard />
           <div className="relative z-20 mx-auto mt-14 h-[480px] max-w-[1000px] ">
             <div className="absolute left-1/2 h-[1149px] w-[1149px] -translate-x-1/2  bg-[#ccff00] rounded-full border-[330px] border-[#ccff00] bg-transparent" />
             <img
