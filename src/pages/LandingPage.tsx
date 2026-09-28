@@ -12,6 +12,7 @@ import whiteSpring from "../assets/spiral.png";
 import { useCategory } from "../hooks/useCategory";
 import Loading from "../components/Loading";
 import HappyStudentsCard from "../components/HappyStudentsCard";
+import CategorySection from "../components/CategorySection";
 
 const Home: React.FC = () => {
   const { data: cardData, loading, error } = useCategory();
@@ -98,7 +99,7 @@ const Home: React.FC = () => {
               {/* 2. Lime Green Search Button Pill */}
               <button
                 type="button"
-                className="flex h-[52px] shrink-0 items-center justify-center rounded-full bg-[#ccff00] px-8 text-[18px]  text-black transition hover:bg-[#b8e600] active:scale-95"
+                className="cursor-pointer flex h-[52px] shrink-0 items-center justify-center rounded-full bg-[#ccff00] px-8 text-[18px]  text-black transition hover:bg-[#b8e600] active:scale-95"
               >
                 Search
               </button>
@@ -176,6 +177,7 @@ const Home: React.FC = () => {
           </div>
         </section>
         <LogoTicker />
+        <CategorySection />
       </main>
     </>
   );
