@@ -25,14 +25,14 @@ const Home: React.FC = () => {
         id="home"
         className="relative z-10 min-h-[calc(100vh-120px)] overflow-hidden"
       >
-        <div className="relative z-20 mx-auto max-w-[1400px] px-6 pt-12 text-center lg:px-12 lg:pt-16">
-          <h1 className="mx-auto max-w-5xl text-4xl font-extrabold leading-tight tracking-tight sm:text-6xl lg:text-7xl">
+        <div className="relative z-20 mx-auto max-w-[1400px] px-2 pt-12 text-center ">
+          <h1 className="mx-auto max-w-5xl text-[72px] font-semibold leading-tight tracking-tight sm:text-6xl lg:text-7xl">
             Get Access to Hundreds
             <br />
             <span>Courses Available</span>
           </h1>
 
-          <p className="mx-auto mt-6 max-w-2xl text-sm leading-relaxed text-white/80 sm:text-base">
+          <p className="mx-auto mt-6  text-[18px] leading-relaxed text-white/80 ">
             Unlock your creativity, gain valuable knowledge, and grow your
             business with our wide range of courses.
           </p>
