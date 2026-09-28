@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import studentImage from "../assets/student-01.png";
 import searchicon from "../assets/search.png";
 import yellowspiral from "../assets/yellow-spiral.png";
@@ -9,7 +9,24 @@ import whiteTorus from "../assets/white-circle.png";
 import yellowPill from "../assets/yellow-rectangle.png";
 import whitePyramid from "../assets/white-triangle.png";
 import whiteSpring from "../assets/spiral.png";
+import { useCategory } from "../hooks/useCategory";
+import Loading from "../components/Loading";
+
 const Home: React.FC = () => {
+  const { data: cardData, loading, error } = useCategory();
+
+  if (loading) {
+    return <Loading />;
+  }
+
+  if (error) {
+    return <div>Failed to load data: {error}</div>;
+  }
+
+  if (!cardData) {
+    return null;
+  }
+
   return (
     <>
       <main className="relative min-h-screen overflow-hidden bg-[#0645e8] text-white">
@@ -116,6 +133,16 @@ const Home: React.FC = () => {
             aria-hidden="true"
             className="pointer-events-none absolute left-[10%] bottom-[1%] z-21 w-[343.68px]  h-[343.68px] object-contain select-none "
           />
+
+          <div className="absolute left-[30%] bottom-[35%] z-30 rounded-2xl bg-white px-6 py-4 shadow-2xl transition-transform hover:scale-105">
+            <h3 className="text-lg font-bold text-gray-900">
+              {cardData.title}
+            </h3>
+            <p className="mt-1 text-sm font-medium text-gray-400">
+              {cardData.coursesCount} Courses &bull; {cardData.studentsCount}+
+              Students
+            </p>
+          </div>
 
           <div className="relative z-20 mx-auto mt-14 h-[480px] max-w-[1000px] ">
             <div className="absolute left-1/2 h-[1149px] w-[1149px] -translate-x-1/2  bg-[#ccff00] rounded-full border-[330px] border-[#ccff00] bg-transparent" />
