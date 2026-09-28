@@ -1,6 +1,8 @@
 import React from "react";
 import studentImage from "../assets/student-01.png";
 import searchicon from "../assets/search.png";
+import yellowspiral from "../assets/yellow-spiral.png";
+import whitespiral from "../assets/white-spiral.png";
 import Header from "../components/Header";
 
 const Home: React.FC = () => {
@@ -26,6 +28,21 @@ const Home: React.FC = () => {
         id="home"
         className="relative z-10 min-h-[calc(100vh-120px)] overflow-hidden"
       >
+        <img
+          src={yellowspiral}
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none absolute left-[-40px] top-[15%] z-0 w-[180px] sm:w-[240px] lg:left-0 lg:w-[320px] object-contain select-none"
+        />
+
+        {/* Small White 3D Spiral */}
+        <img
+          src={whitespiral}
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none absolute left-[13%] bottom-[31%]  z-0 w-[200px] object-contain select-none"
+        />
+
         <div className="relative z-20 mx-auto max-w-[1400px] px-2 pt-12 text-center ">
           <h1 className="mx-auto max-w-5xl text-[72px] font-semibold leading-tight tracking-tight sm:text-6xl lg:text-7xl">
             Get Access to Hundreds
@@ -51,14 +68,14 @@ const Home: React.FC = () => {
               <input
                 type="text"
                 placeholder="Course, topic, creator"
-                className="w-full bg-transparent text-[15px] text-gray-800 outline-none placeholder:text-gray-400"
+                className="w-full bg-transparent text-[18px] text-gray-800 outline-none placeholder:text-gray-400"
               />
             </div>
 
             {/* 2. Lime Green Search Button Pill */}
             <button
               type="button"
-              className="flex h-[52px] shrink-0 items-center justify-center rounded-full bg-[#ccff00] px-8 text-[15px] font-semibold text-black transition hover:bg-[#b8e600] active:scale-95"
+              className="flex h-[52px] shrink-0 items-center justify-center rounded-full bg-[#ccff00] px-8 text-[18px]  text-black transition hover:bg-[#b8e600] active:scale-95"
             >
               Search
             </button>
