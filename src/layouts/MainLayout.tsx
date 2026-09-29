@@ -2,13 +2,12 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import Login from "../components/auth/Login";
 
 const MainLayout: React.FC = () => {
   return (
     <div className="relative min-h-screen bg-white">
-      {/* 1. Persistent Top Header with Blue Blueprint Background */}
       <div className="relative overflow-hidden bg-[#0645e8] text-white">
-        {/* Blueprint Grid Lines */}
         <div className="pointer-events-none absolute inset-0 z-0 flex h-full w-full justify-between">
           {Array.from({ length: 13 }).map((_, index) => (
             <div key={index} className="h-full border-r-2 border-white/30" />
@@ -22,18 +21,15 @@ const MainLayout: React.FC = () => {
           }}
         />
 
-        {/* Global Header */}
         <div className="relative z-10">
           <Header />
         </div>
       </div>
 
-      {/* 2. Dynamic Main Body based on Route */}
       <main>
         <Outlet />
       </main>
 
-      {/* 3. Persistent Footer */}
       <Footer />
     </div>
   );
