@@ -3,6 +3,8 @@ import React from "react";
 import CourseCard from "./CourseCard";
 import studentImage from "../assets/student-01.png";
 import type { Course } from "../types/course";
+import { useCategory } from "../hooks/useCategory";
+import Loading from "./Loading";
 
 const sampleCourse: Course = {
   id: "hero-figma-course",
@@ -26,6 +28,19 @@ const sampleCourse: Course = {
 };
 
 export const GrowthHeroSection: React.FC = () => {
+  const { data: cardData, loading, error } = useCategory();
+
+  if (loading) {
+    return <Loading />;
+  }
+
+  if (error) {
+    return <div>Failed to load data: {error}</div>;
+  }
+
+  if (!cardData) {
+    return null;
+  }
   return (
     <section className="relative w-full overflow-hidden bg-[#FAFCFF] py-20">
       {/* --- Exact Match Gradient Mesh Background --- */}
@@ -124,17 +139,24 @@ export const GrowthHeroSection: React.FC = () => {
               </div>
 
               {/* Floating Progress Pill */}
-              {/* <div className="absolute right-0 top-[38%] z-20 w-48 rounded-2xl border border-gray-100 bg-white/95 p-4 shadow-xl backdrop-blur-md">
-                <p className="font-satoshi text-xs font-medium text-gray-500">
+              <div className="absolute -right-[35%] bottom-[14%] z-30 w-64 rounded-3xl bg-white p-6 shadow-2xl transition-transform hover:scale-105">
+                <p className="text-sm font-medium text-gray-500">
                   Learning Progress
                 </p>
-                <p className="mt-1 font-poppins text-3xl font-bold text-gray-900">
-                  55%
-                </p>
-                <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-gray-100">
-                  <div className="h-full w-[55%] rounded-full bg-[#D4FB20]" />
+
+                <h2 className="mt-2 text-5xl font-black tracking-tight text-gray-900">
+                  {cardData.learningProgress}%
+                </h2>
+
+                {/* Progress Bar Track */}
+                <div className=" mt-1 h-3 w-full -bottom-2 rounded-full bg-gray-100 overflow-hidden">
+                  {/* Active Fill */}
+                  <div
+                    className="h-full rounded-full bg-[#CCFF00] transition-all duration-500"
+                    style={{ width: `${cardData.learningProgress}%` }}
+                  />
                 </div>
-              </div> */}
+              </div>
 
               {/* Lime Scribble Accent */}
               {/* <div className="absolute -right-4 top-[15%] z-20">
