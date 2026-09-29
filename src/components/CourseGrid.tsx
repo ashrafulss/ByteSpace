@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { useCourses } from "../hooks/useCourses";
 import { CourseCard } from "./CourseCard";
 import type { Course } from "../types/course";
@@ -12,7 +13,17 @@ const CourseGrid: React.FC<CourseGridProps> = ({
   columns = "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3",
   onCourseClick,
 }) => {
+  const navigate = useNavigate();
   const { courses, loading, error } = useCourses();
+
+  const handleCardClick = (course: Course) => {
+    if (onCourseClick) {
+      onCourseClick(course);
+    } else {
+      navigate(`/course/${course.id}`);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
 
   if (loading) {
     return (
@@ -43,7 +54,7 @@ const CourseGrid: React.FC<CourseGridProps> = ({
             <CourseCard
               key={course.id}
               course={course}
-              onClick={onCourseClick}
+              onClick={() => handleCardClick(course)}
             />
           ))}
         </div>
