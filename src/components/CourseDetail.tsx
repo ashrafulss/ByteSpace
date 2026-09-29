@@ -49,8 +49,7 @@ export const CourseDetail: React.FC = () => {
 
   return (
     <div className="w-full bg-white">
-      {/* 🔵 BLUE HERO SECTION: Extended up (-mt-24) to seamlessly merge background with Header */}
-      <div className="relative  bg-[#0645e8] pt-24 text-white">
+      <div className="relative  bg-[#0645e8]  text-white">
         {/* Blueprint Grid Overlay (Matches MainLayout grid design) */}
         <div className="pointer-events-none absolute inset-0 z-0 flex h-full w-full justify-between">
           {Array.from({ length: 13 }).map((_, index) => (
@@ -67,13 +66,6 @@ export const CourseDetail: React.FC = () => {
 
         {/* Hero Content Wrapper */}
         <div className="relative z-10 mx-auto max-w-7xl px-4 pb-28 pt-8 sm:px-6 lg:px-12">
-          <button
-            onClick={() => navigate(-1)}
-            className="mb-4 inline-flex items-center gap-2 text-xs font-semibold text-white/80 transition hover:text-white"
-          >
-            &larr; Back to all courses
-          </button>
-
           {/* Title & Share Button */}
           <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
             <div>
