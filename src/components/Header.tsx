@@ -100,12 +100,12 @@ export const Header: React.FC = () => {
         className="absolute top-1/2 hidden -translate-y-1/2 items-center gap-6 md:flex"
         style={{ right: "8.333%" }}
       >
-        <button
-          type="button"
+        <Link
+          to="/login"
           className="cursor-pointer text-[16px] font-medium text-white"
         >
           Sign In
-        </button>
+        </Link>
         <button
           type="button"
           className="cursor-pointer text-[16px] font-medium text-white"

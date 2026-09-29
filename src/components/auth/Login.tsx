@@ -1,14 +1,15 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "./../../assets/logo.png";
 
 export const Login: React.FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle sign-in logic
+    navigate("/");
   };
 
   return (
@@ -186,7 +187,6 @@ export const Login: React.FC = () => {
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="designer@example.com"
                     className="w-full rounded-xl border border-gray-200 px-4 py-3 text-xs text-gray-900 placeholder-gray-300 focus:border-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-600"
-                    required
                   />
                 </div>
 
@@ -198,7 +198,6 @@ export const Login: React.FC = () => {
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="••••••••"
                     className="w-full rounded-xl border border-gray-200 px-4 py-3 text-xs text-gray-900 placeholder-gray-300 focus:border-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-600"
-                    required
                   />
                 </div>
 
