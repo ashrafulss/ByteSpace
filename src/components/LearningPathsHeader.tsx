@@ -2,7 +2,7 @@ import React from "react";
 
 const LearningPathsHeader: React.FC = () => {
   return (
-    <section className="w-full bg-white px-4 py-16 text-center sm:py-20">
+    <section className="w-full bg-white px-4 text-center sm:py-20">
       <div className="mx-auto max-w-4xl">
         {/* Title */}
         <h2 className="font-poppins text-center text-[36px] font-semibold leading-[120%] tracking-[-0.01em] text-[#0B101D]">

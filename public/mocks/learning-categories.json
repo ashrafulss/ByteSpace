@@ -1,0 +1,8 @@
+[
+  { "id": 1, "title": "Design", "icon": "design" },
+  { "id": 2, "title": "Development", "icon": "development" },
+  { "id": 3, "title": "IT & Software", "icon": "it-software" },
+  { "id": 4, "title": "Business", "icon": "business" },
+  { "id": 5, "title": "Marketing", "icon": "marketing" },
+  { "id": 6, "title": "Photography", "icon": "photography" }
+]
