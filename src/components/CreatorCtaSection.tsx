@@ -17,7 +17,10 @@ export const CreatorCtaSection: React.FC<CreatorCtaSectionProps> = ({
   onJoinClick,
 }) => {
   return (
-    <section className="relative w-full overflow-hidden py-20 text-white sm:py-28 lg:py-32">
+    <section
+      id="creators"
+      className="relative w-full overflow-hidden py-20 text-white sm:py-28 lg:py-32"
+    >
       {/* --- Background Blueprint Grid Pattern --- */}
       <div className="pointer-events-none absolute inset-0 z-0 flex h-full w-full justify-between opacity-30">
         {/* Vertical Grid Lines */}

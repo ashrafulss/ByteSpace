@@ -36,7 +36,7 @@ const CourseGrid: React.FC<CourseGridProps> = ({
   if (error) return null;
 
   return (
-    <section className="w-full bg-white px-4">
+    <section id="courses" className="w-full bg-white px-4">
       <div className="mx-auto max-w-7xl">
         <div className={`grid gap-6 ${columns}`}>
           {courses.map((course) => (
