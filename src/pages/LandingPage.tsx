@@ -20,6 +20,7 @@ import GrowthHeroSection from "../components/GrowthHeroSection";
 import CreateManageSection from "../components/CreateManageSection";
 import CreatorCtaSection from "../components/CreatorCtaSection";
 import TestimonialsSection from "../components/TestimonialsSection";
+import Footer from "../components/Footer";
 
 const Home: React.FC = () => {
   const { data: cardData, loading, error } = useCategory();
@@ -192,6 +193,7 @@ const Home: React.FC = () => {
         <CreateManageSection />
         <CreatorCtaSection />
         <TestimonialsSection />
+        <Footer />
       </main>
     </>
   );
