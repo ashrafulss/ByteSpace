@@ -1,17 +1,22 @@
-import React, { useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import React from "react";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
 import { useCourses } from "../hooks/useCourses";
 
 export const CourseDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
+  const location = useLocation();
   const { courses, loading } = useCourses();
 
-  const [activeTab, setActiveTab] = useState<"about" | "lessons" | "reviews">(
-    "about",
-  );
+  // Safely resolve current tab: default to "about" if the segment is the ID or unrecognized
+  const lastSegment = location.pathname.split("/").filter(Boolean).pop();
+  const currentTab =
+    !lastSegment ||
+    lastSegment === id ||
+    !["about", "lessons", "reviews"].includes(lastSegment)
+      ? "about"
+      : lastSegment;
 
-  // Find course from your hook by ID
   const course = courses.find((c) => String(c.id) === id);
 
   const keyPoints = [
@@ -49,11 +54,11 @@ export const CourseDetail: React.FC = () => {
 
   return (
     <div className="w-full bg-white">
-      <div className="relative  bg-[#0645e8]  text-white">
-        {/* Blueprint Grid Overlay (Matches MainLayout grid design) */}
+      {/* Header Banner */}
+      <div className="relative bg-[#0645e8] text-white">
         <div className="pointer-events-none absolute inset-0 z-0 flex h-full w-full justify-between">
           {Array.from({ length: 13 }).map((_, index) => (
-            <div key={index} className="h-full border-r-2  border-white/30" />
+            <div key={index} className="h-full border-r-2 border-white/30" />
           ))}
         </div>
         <div
@@ -64,9 +69,7 @@ export const CourseDetail: React.FC = () => {
           }}
         />
 
-        {/* Hero Content Wrapper */}
         <div className="relative z-10 mx-auto max-w-7xl px-4 pb-28 pt-8 sm:px-6 lg:px-12">
-          {/* Title & Share Button */}
           <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
             <div>
               <h1 className="font-poppins text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
@@ -75,36 +78,16 @@ export const CourseDetail: React.FC = () => {
               <p className="mt-2 text-sm text-white/80 sm:text-base">
                 Unlock the Power of Digital Creation with Expert Guidance
               </p>
-              <p className="mt-2 text-xs text-white/70">
-                by{" "}
-                {/* <span className="font-semibold text-white">
-                  {course.instructor || "PurePearl Studio"}
-                </span> */}
-              </p>
             </div>
 
             <button
               type="button"
               className="inline-flex cursor-pointer items-center gap-2 self-start rounded-full bg-[#CCFF00] px-5 py-2.5 font-poppins text-xs font-bold text-black transition hover:bg-[#b8e600]"
             >
-              <svg
-                className="h-3.5 w-3.5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"
-                />
-              </svg>
               Share
             </button>
           </div>
 
-          {/* Metadata Badges */}
           <div className="mt-6 flex flex-wrap items-center gap-3">
             <span className="rounded-full bg-white/20 px-4 py-1 text-xs font-semibold text-white backdrop-blur-sm">
               Intermediate
@@ -117,17 +100,8 @@ export const CourseDetail: React.FC = () => {
             </span>
           </div>
 
-          {/* Main Video Box & Grid positioning */}
           <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-12">
             <div className="relative aspect-[16/10] w-full overflow-hidden rounded-3xl bg-gray-900/40 shadow-2xl lg:col-span-8">
-              {/* <img
-                src={
-                  course.image ||
-                  "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1200&q=80"
-                }
-                alt={course.title}
-                className="h-full w-full object-cover"
-              /> */}
               <div className="absolute inset-0 flex items-center justify-center bg-black/20">
                 <button
                   aria-label="Play video"
@@ -147,17 +121,18 @@ export const CourseDetail: React.FC = () => {
         </div>
       </div>
 
-      {/* ⚪ MAIN CONTENT SECTION (Includes overlapping floating sidebar) */}
+      {/* Main Content */}
       <div className="relative z-20 mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-12">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
-          {/* Left Column - Main Details */}
+          {/* Left Column */}
           <div className="pt-8 lg:col-span-8">
-            {/* Tabs */}
+            {/* Route Tab Buttons */}
             <div className="flex items-center gap-3">
               <button
-                onClick={() => setActiveTab("about")}
-                className={`rounded-full px-5 py-1.5 text-xs font-bold transition ${
-                  activeTab === "about"
+                type="button"
+                onClick={() => navigate(`/course/${id}/about`)}
+                className={`cursor-pointer rounded-full px-5 py-1.5 text-xs font-bold transition ${
+                  currentTab === "about"
                     ? "bg-[#CCFF00] text-black"
                     : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                 }`}
@@ -165,9 +140,10 @@ export const CourseDetail: React.FC = () => {
                 About
               </button>
               <button
-                onClick={() => setActiveTab("lessons")}
-                className={`rounded-full px-5 py-1.5 text-xs font-bold transition ${
-                  activeTab === "lessons"
+                type="button"
+                onClick={() => navigate(`/course/${id}/lessons`)}
+                className={`cursor-pointer rounded-full px-5 py-1.5 text-xs font-bold transition ${
+                  currentTab === "lessons"
                     ? "bg-[#CCFF00] text-black"
                     : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                 }`}
@@ -175,9 +151,10 @@ export const CourseDetail: React.FC = () => {
                 Lessons
               </button>
               <button
-                onClick={() => setActiveTab("reviews")}
-                className={`rounded-full px-5 py-1.5 text-xs font-bold transition ${
-                  activeTab === "reviews"
+                type="button"
+                onClick={() => navigate(`/course/${id}/reviews`)}
+                className={`cursor-pointer rounded-full px-5 py-1.5 text-xs font-bold transition ${
+                  currentTab === "reviews"
                     ? "bg-[#CCFF00] text-black"
                     : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                 }`}
@@ -186,88 +163,82 @@ export const CourseDetail: React.FC = () => {
               </button>
             </div>
 
-            {/* Description Body */}
-            <div className="mt-8 space-y-4 font-satoshi text-xs leading-relaxed text-gray-600 sm:text-sm">
-              <h3 className="font-poppins text-base font-bold text-gray-900">
-                Description
-              </h3>
-              <p>
-                Embark on an enlightening exploration into the world of digital
-                creation with our comprehensive course, &quot;Build Digital
-                Assets: A Comprehensive Guide.&quot; This transformative
-                learning experience invites you to delve deep into the
-                intricacies of crafting impactful digital content. From laying
-                the groundwork with foundational concepts to mastering advanced
-                techniques, this guide is meticulously curated to empower you
-                with the skills essential for navigating the dynamic landscape
-                of digital asset creation.
-              </p>
-              <p>
-                In the initial modules, you&apos;ll establish a solid foundation
-                by immersing yourself in foundational concepts that form the
-                backbone of digital asset creation. Understand the fundamental
-                elements that constitute compelling digital content and gain
-                proficiency in leveraging these elements to communicate
-                effectively in the digital realm.
-              </p>
-              <p>
-                As you progress through the course, you&apos;ll ascend to higher
-                levels of expertise, delving into the nuances of design
-                principles that drive impactful creations.
-              </p>
-            </div>
+            {/* Render Tab Specific Content */}
+            {currentTab === "about" && (
+              <>
+                <div className="mt-8 space-y-4 font-satoshi text-xs leading-relaxed text-gray-600 sm:text-sm">
+                  <h3 className="font-poppins text-base font-bold text-gray-900">
+                    Description
+                  </h3>
+                  <p>
+                    Embark on an enlightening exploration into the world of
+                    digital creation with our comprehensive course...
+                  </p>
+                </div>
 
-            {/* Sneak Peak Gallery */}
-            <div className="mt-8">
-              <h4 className="font-poppins text-xs font-bold text-gray-900">
-                Sneak Peak
-              </h4>
-              <div className="mt-3 grid grid-cols-4 gap-3">
-                <img
-                  src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=300&q=80"
-                  alt="Sneak peak 1"
-                  className="h-24 w-full rounded-xl object-cover shadow-sm"
-                />
-                <img
-                  src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=300&q=80"
-                  alt="Sneak peak 2"
-                  className="h-24 w-full rounded-xl object-cover shadow-sm"
-                />
-                <img
-                  src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=300&q=80"
-                  alt="Sneak peak 3"
-                  className="h-24 w-full rounded-xl object-cover shadow-sm"
-                />
-                <img
-                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=300&q=80"
-                  alt="Sneak peak 4"
-                  className="h-24 w-full rounded-xl object-cover shadow-sm"
-                />
+                <div className="mt-8">
+                  <h4 className="font-poppins text-xs font-bold text-gray-900">
+                    Sneak Peak
+                  </h4>
+                  <div className="mt-3 grid grid-cols-4 gap-3">
+                    <img
+                      src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=300&q=80"
+                      alt="Sneak peak 1"
+                      className="h-24 w-full rounded-xl object-cover shadow-sm"
+                    />
+                    <img
+                      src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=300&q=80"
+                      alt="Sneak peak 2"
+                      className="h-24 w-full rounded-xl object-cover shadow-sm"
+                    />
+                  </div>
+                </div>
+
+                <div className="mt-8">
+                  <h4 className="font-poppins text-xs font-bold text-gray-900">
+                    Key Points
+                  </h4>
+                  <ul className="mt-3 space-y-2">
+                    {keyPoints.map((point, i) => (
+                      <li
+                        key={i}
+                        className="flex items-center gap-2 text-xs text-gray-700"
+                      >
+                        <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-blue-600 text-[10px] text-white">
+                          ✓
+                        </span>
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </>
+            )}
+
+            {currentTab === "lessons" && (
+              <div className="mt-8 space-y-4">
+                <h3 className="font-poppins text-base font-bold text-gray-900">
+                  Course Lessons
+                </h3>
+                <p className="text-xs text-gray-600 sm:text-sm">
+                  List of all course modules and downloadable materials.
+                </p>
               </div>
-            </div>
+            )}
 
-            {/* Key Points */}
-            <div className="mt-8">
-              <h4 className="font-poppins text-xs font-bold text-gray-900">
-                Key Points
-              </h4>
-              <ul className="mt-3 space-y-2">
-                {keyPoints.map((point, i) => (
-                  <li
-                    key={i}
-                    className="flex items-center gap-2 text-xs text-gray-700"
-                  >
-                    <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-blue-600 text-[10px] text-white">
-                      ✓
-                    </span>
-                    {point}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            {currentTab === "reviews" && (
+              <div className="mt-8 space-y-4">
+                <h3 className="font-poppins text-base font-bold text-gray-900">
+                  Student Reviews
+                </h3>
+                <p className="text-xs text-gray-600 sm:text-sm">
+                  Ratings and reviews from enrolled students.
+                </p>
+              </div>
+            )}
           </div>
 
-          {/* Right Column - Floating Sidebar Card Overlapping top & bottom */}
+          {/* Right Floating Sidebar */}
           <div className="relative lg:col-span-4">
             <div className="rounded-3xl bg-white p-6 text-gray-900 shadow-2xl lg:absolute lg:-top-[380px] lg:w-full">
               <h2 className="font-poppins text-base font-bold">
