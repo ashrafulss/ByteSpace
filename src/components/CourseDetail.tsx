@@ -1,6 +1,9 @@
 import React from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import { useCourses } from "../hooks/useCourses";
+import CourseAboutTab from "./courseComponent/CourseAboutTab";
+import CourseLessonsTab from "./courseComponent/CourseLessonsTab";
+import CourseReviewsTab from "./courseComponent/CourseReviewsTab";
 
 export const CourseDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -163,79 +166,9 @@ export const CourseDetail: React.FC = () => {
               </button>
             </div>
 
-            {/* Render Tab Specific Content */}
-            {currentTab === "about" && (
-              <>
-                <div className="mt-8 space-y-4 font-satoshi text-xs leading-relaxed text-gray-600 sm:text-sm">
-                  <h3 className="font-poppins text-base font-bold text-gray-900">
-                    Description
-                  </h3>
-                  <p>
-                    Embark on an enlightening exploration into the world of
-                    digital creation with our comprehensive course...
-                  </p>
-                </div>
-
-                <div className="mt-8">
-                  <h4 className="font-poppins text-xs font-bold text-gray-900">
-                    Sneak Peak
-                  </h4>
-                  <div className="mt-3 grid grid-cols-4 gap-3">
-                    <img
-                      src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=300&q=80"
-                      alt="Sneak peak 1"
-                      className="h-24 w-full rounded-xl object-cover shadow-sm"
-                    />
-                    <img
-                      src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=300&q=80"
-                      alt="Sneak peak 2"
-                      className="h-24 w-full rounded-xl object-cover shadow-sm"
-                    />
-                  </div>
-                </div>
-
-                <div className="mt-8">
-                  <h4 className="font-poppins text-xs font-bold text-gray-900">
-                    Key Points
-                  </h4>
-                  <ul className="mt-3 space-y-2">
-                    {keyPoints.map((point, i) => (
-                      <li
-                        key={i}
-                        className="flex items-center gap-2 text-xs text-gray-700"
-                      >
-                        <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-blue-600 text-[10px] text-white">
-                          ✓
-                        </span>
-                        {point}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </>
-            )}
-
-            {currentTab === "lessons" && (
-              <div className="mt-8 space-y-4">
-                <h3 className="font-poppins text-base font-bold text-gray-900">
-                  Course Lessons
-                </h3>
-                <p className="text-xs text-gray-600 sm:text-sm">
-                  List of all course modules and downloadable materials.
-                </p>
-              </div>
-            )}
-
-            {currentTab === "reviews" && (
-              <div className="mt-8 space-y-4">
-                <h3 className="font-poppins text-base font-bold text-gray-900">
-                  Student Reviews
-                </h3>
-                <p className="text-xs text-gray-600 sm:text-sm">
-                  Ratings and reviews from enrolled students.
-                </p>
-              </div>
-            )}
+            {currentTab === "about" && <CourseAboutTab />}
+            {currentTab === "lessons" && <CourseLessonsTab />}
+            {currentTab === "reviews" && <CourseReviewsTab />}
           </div>
 
           {/* Right Floating Sidebar */}
