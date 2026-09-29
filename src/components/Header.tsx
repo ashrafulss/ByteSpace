@@ -1,14 +1,48 @@
 import React, { useState } from "react";
 import logo from "../assets/logo.png";
 import cartIcon from "../assets/cart.png";
+import { useLocation, useNavigate, Link } from "react-router-dom";
 
 export const Header: React.FC = () => {
   const [activeTab, setActiveTab] = useState("home");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    targetId: string,
+  ) => {
+    e.preventDefault();
+    setActiveTab(targetId);
+    setIsMenuOpen(false); // Close mobile drawer if open
+
+    if (location.pathname === "/") {
+      // Already on home page: scroll smoothly
+      if (targetId === "home") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        const element = document.getElementById(targetId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
+    } else {
+      // On another page (e.g., /course/2): navigate to home with section hash
+      if (targetId === "home") {
+        navigate("/");
+      } else {
+        navigate(`/#${targetId}`);
+      }
+    }
+  };
+
   return (
     <header className="relative z-50 h-[120px] w-full bg-transparent">
-      <div
+      {/* Logo Container */}
+      <Link
+        to="/"
         className="absolute top-1/2 flex -translate-y-1/2 items-end gap-2.5"
         style={{ left: "8.333%" }}
       >
@@ -20,13 +54,14 @@ export const Header: React.FC = () => {
         <span className="font-clash text-[24px] font-bold leading-none tracking-normal text-white">
           ByteSpace
         </span>
-      </div>
+      </Link>
 
+      {/* Desktop Navigation */}
       <nav className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 items-center gap-10 md:flex">
         <a
           href="#home"
-          onClick={() => setActiveTab("home")}
-          className={`relative py-2 text-[16px] transition-all ${
+          onClick={(e) => handleNavClick(e, "home")}
+          className={`relative py-2 text-[16px] transition-all cursor-pointer ${
             activeTab === "home"
               ? "font-semibold text-white"
               : "font-normal text-white/90"
@@ -37,8 +72,8 @@ export const Header: React.FC = () => {
 
         <a
           href="#courses"
-          onClick={() => setActiveTab("courses")}
-          className={`relative py-2 text-[16px] transition-all ${
+          onClick={(e) => handleNavClick(e, "courses")}
+          className={`relative py-2 text-[16px] transition-all cursor-pointer ${
             activeTab === "courses"
               ? "font-semibold text-white"
               : "font-normal text-white/90"
@@ -49,8 +84,8 @@ export const Header: React.FC = () => {
 
         <a
           href="#creators"
-          onClick={() => setActiveTab("creators")}
-          className={`relative py-2 text-[16px] transition-all ${
+          onClick={(e) => handleNavClick(e, "creators")}
+          className={`relative py-2 text-[16px] transition-all cursor-pointer ${
             activeTab === "creators"
               ? "font-semibold text-white"
               : "font-normal text-white/90"
@@ -60,6 +95,7 @@ export const Header: React.FC = () => {
         </a>
       </nav>
 
+      {/* Actions */}
       <div
         className="absolute top-1/2 hidden -translate-y-1/2 items-center gap-6 md:flex"
         style={{ right: "8.333%" }}
@@ -85,6 +121,7 @@ export const Header: React.FC = () => {
         </button>
       </div>
 
+      {/* Mobile Toggle Button */}
       <button
         type="button"
         onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -94,41 +131,33 @@ export const Header: React.FC = () => {
         {isMenuOpen ? "✕" : "☰"}
       </button>
 
+      {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="absolute top-[120px] left-0 z-50 flex w-full flex-col gap-6 bg-[#0645e8] px-8 py-6 border-b border-white/20 shadow-2xl md:hidden">
           <nav className="flex flex-col gap-4">
             <a
               href="#home"
-              onClick={() => {
-                setActiveTab("home");
-                setIsMenuOpen(false);
-              }}
-              className={`text-lg ${
-                activeTab === "home" ? "font-semibold " : "text-white"
+              onClick={(e) => handleNavClick(e, "home")}
+              className={`text-lg text-white ${
+                activeTab === "home" ? "font-semibold underline" : ""
               }`}
             >
               Home
             </a>
             <a
               href="#courses"
-              onClick={() => {
-                setActiveTab("courses");
-                setIsMenuOpen(false);
-              }}
-              className={`text-lg ${
-                activeTab === "courses" ? "font-semibold " : "text-white"
+              onClick={(e) => handleNavClick(e, "courses")}
+              className={`text-lg text-white ${
+                activeTab === "courses" ? "font-semibold underline" : ""
               }`}
             >
               Courses
             </a>
             <a
               href="#creators"
-              onClick={() => {
-                setActiveTab("creators");
-                setIsMenuOpen(false);
-              }}
-              className={`text-lg ${
-                activeTab === "creators" ? "font-semibold " : "text-white"
+              onClick={(e) => handleNavClick(e, "creators")}
+              className={`text-lg text-white ${
+                activeTab === "creators" ? "font-semibold underline" : ""
               }`}
             >
               Creators
