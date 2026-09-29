@@ -5,9 +5,9 @@ import limeSpiralLeft from "../assets/yellow-spiral.png";
 import whiteZigzag from "../assets/spiral.png";
 import whiteCone from "../assets/white-triangle-1.png";
 import limeTorus from "../assets/yellow-circle-1.png"; // Replace with yellow/lime ring asset
-import limePyramid from "../assets/white-triangle.png"; // Replace with yellow/lime pyramid asset
-import whitePill from "../assets/yellow-rectangle.png"; // Replace with white cylinder/pill asset
-import limeSpringRight from "../assets/spiral.png";
+import limePyramid from "../assets/yellow-triangle.png"; // Replace with yellow/lime pyramid asset
+import whitePill from "../assets/white-squre.png"; // Replace with white cylinder/pill asset
+import limeSpringRight from "../assets/yellow-spiral-02.png";
 
 interface CreatorCtaSectionProps {
   onJoinClick?: () => void;
@@ -72,7 +72,7 @@ export const CreatorCtaSection: React.FC<CreatorCtaSectionProps> = ({
         src={limePyramid}
         alt=""
         aria-hidden="true"
-        className="pointer-events-none absolute right-[15%] top-[8%] z-10 hidden w-[110px] sm:block lg:right-[18%] lg:top-[10%] lg:w-[160px] object-contain select-none"
+        className="pointer-events-none absolute right-[15%] top-[8%] z-10 hidden w-[110px] sm:block lg:right-[15%] lg:top-[5%] lg:w-[180px] object-contain select-none"
       />
 
       {/* Far Right: Big White Rounded Cylinder / Pill */}
@@ -80,7 +80,7 @@ export const CreatorCtaSection: React.FC<CreatorCtaSectionProps> = ({
         src={whitePill}
         alt=""
         aria-hidden="true"
-        className="pointer-events-none absolute -right-16 top-[10%] z-10 w-[200px] sm:w-[280px] lg:right-[-60px] lg:top-[5%] lg:w-[380px] object-contain select-none"
+        className="pointer-events-none absolute -right-16 top-[10%] z-10 w-[200px] sm:w-[280px] lg:right-[-5px] lg:top-[5%] lg:w-[200px] object-contain select-none"
       />
 
       {/* Bottom Right: Lime Spring / Coil */}
@@ -88,7 +88,7 @@ export const CreatorCtaSection: React.FC<CreatorCtaSectionProps> = ({
         src={limeSpringRight}
         alt=""
         aria-hidden="true"
-        className="pointer-events-none absolute right-[2%] bottom-[-10%] z-10 w-[180px] sm:w-[240px] lg:right-[6%] lg:bottom-[-15%] lg:w-[320px] object-contain select-none"
+        className="pointer-events-none absolute right-[2%] bottom-[-10%] z-10 w-[180px] sm:w-[240px] lg:right-[6%] lg:bottom-[-22%] lg:w-[320px] object-contain select-none"
       />
 
       {/* --- Center Banner Content --- */}
