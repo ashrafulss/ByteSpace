@@ -1,15 +1,15 @@
 export interface Course {
-  id: number;
+  id: string | number;
   title: string;
-  author: string;
   thumbnail: string;
-  rating: number;
   lessonsCount: number;
   duration: string;
   commentsCount: number;
+  author: string;
+  rating: number | string; // Allow both number and string
   level: string;
-  price: number;
-  priceType: string;
-  enrolledBadge: string;
   studentAvatars: string[];
+  enrolledBadge: string | number;
+  price: number | string; // Allow both number and string
+  priceType?: string;
 }

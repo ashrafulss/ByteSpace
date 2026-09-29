@@ -1,5 +1,29 @@
 // src/components/GrowthHeroSection.tsx
 import React from "react";
+import CourseCard from "./CourseCard";
+import studentImage from "../assets/student-01.png";
+import type { Course } from "../types/course";
+
+const sampleCourse: Course = {
+  id: "hero-figma-course",
+  title: "Learn Figma from Zero",
+  thumbnail: "/images/course/figma.jpg",
+  lessonsCount: 17,
+  duration: "2 hours 16 min",
+  commentsCount: 24,
+  author: "purepixel studio",
+  rating: 4.9,
+  level: "Beginner",
+  studentAvatars: [
+    "/images/students/01.png",
+    "/images/students/02.png",
+    "/images/students/03.png",
+    "/images/students/04.png",
+  ],
+  enrolledBadge: "+12",
+  price: 25,
+  priceType: "lifetime",
+};
 
 export const GrowthHeroSection: React.FC = () => {
   return (
@@ -36,7 +60,7 @@ export const GrowthHeroSection: React.FC = () => {
       <div className="relative mx-auto max-w-7xl  ">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
           {/* Left Column: Title, Subtitle & Metrics */}
-          <div className="lg:col-span-6">
+          <div className="lg:col-span-6 pt-44">
             <h1 className="font-poppins text-[44px] font-extrabold leading-[1.15] text-[#111827] ">
               Your Path to Professional <br />
               Growth Starts Here!
@@ -82,63 +106,25 @@ export const GrowthHeroSection: React.FC = () => {
           </div>
 
           {/* Right Column: Cards & Student Visual Composition */}
-          <div className="relative flex justify-center lg:col-span-6 lg:justify-end">
+          <div className=" flex justify-start lg:col-span-6 ">
             <div className="relative w-full max-w-[480px]">
               {/* Background Mock Course Card */}
-              <div className="w-[82%] rounded-[28px] border border-gray-200/80 bg-white/95 p-3.5 shadow-md backdrop-blur-sm">
-                <div className="relative h-44 w-full overflow-hidden rounded-2xl bg-gray-100">
-                  <img
-                    src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80"
-                    alt="Course Preview"
-                    className="h-full w-full object-cover"
-                  />
-                  {/* Glass Pill */}
-                  <div className="absolute bottom-2.5 left-2.5 flex items-center gap-2 rounded-lg bg-white/80 px-2.5 py-1 backdrop-blur-md">
-                    <span className="font-satoshi text-[10px] font-medium text-gray-700">
-                      17 Lessons
-                    </span>
-                    <span className="font-satoshi text-[10px] font-medium text-gray-700">
-                      2 hours 16 min
-                    </span>
-                  </div>
-                </div>
-
-                <div className="mt-3 px-1">
-                  <h4 className="font-poppins text-base font-bold text-gray-900">
-                    Learn Figma from Zero
-                  </h4>
-                  <p className="font-satoshi text-xs text-gray-500">
-                    by purepixel studio
-                  </p>
-                </div>
-
-                <div className="mt-3 flex items-center gap-2 px-1">
-                  <span className="rounded-full bg-gray-100 px-2.5 py-0.5 font-satoshi text-[10px] font-medium text-gray-600">
-                    Beginner
-                  </span>
-                </div>
-
-                <div className="mt-3 border-t border-gray-100 px-1 pt-2">
-                  <span className="font-poppins text-base font-bold text-[#0C47FB]">
-                    $25
-                  </span>
-                  <span className="font-satoshi text-[10px] text-gray-400">
-                    /lifetime
-                  </span>
-                </div>
-              </div>
+              <CourseCard
+                course={sampleCourse}
+                className="w-[90%] shadow-md backdrop-blur-sm bg-white/95 border-gray-200/80"
+              />
 
               {/* Student Floating Cutout Overlay */}
-              <div className="absolute -bottom-6 right-0 z-10 w-[72%]">
+              <div className="absolute top-10 -right-30 z-10 w-[110%]  pointer-events-none">
                 <img
-                  src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80"
+                  src={studentImage}
                   alt="Student with laptop"
-                  className="h-auto w-full drop-shadow-2xl"
+                  className="h-auto w-full  object-contain drop-shadow-2xl scale-110"
                 />
               </div>
 
               {/* Floating Progress Pill */}
-              <div className="absolute right-0 top-[38%] z-20 w-48 rounded-2xl border border-gray-100 bg-white/95 p-4 shadow-xl backdrop-blur-md">
+              {/* <div className="absolute right-0 top-[38%] z-20 w-48 rounded-2xl border border-gray-100 bg-white/95 p-4 shadow-xl backdrop-blur-md">
                 <p className="font-satoshi text-xs font-medium text-gray-500">
                   Learning Progress
                 </p>
@@ -148,10 +134,10 @@ export const GrowthHeroSection: React.FC = () => {
                 <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-gray-100">
                   <div className="h-full w-[55%] rounded-full bg-[#D4FB20]" />
                 </div>
-              </div>
+              </div> */}
 
               {/* Lime Scribble Accent */}
-              <div className="absolute -right-4 top-[15%] z-20">
+              {/* <div className="absolute -right-4 top-[15%] z-20">
                 <svg
                   width="70"
                   height="70"
@@ -167,7 +153,7 @@ export const GrowthHeroSection: React.FC = () => {
                     strokeLinejoin="round"
                   />
                 </svg>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
