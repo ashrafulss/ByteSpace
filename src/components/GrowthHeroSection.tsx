@@ -2,6 +2,7 @@
 import React from "react";
 import CourseCard from "./CourseCard";
 import studentImage from "../assets/student-01.png";
+import spiral from "../assets/yellow-spiral-02.png";
 import type { Course } from "../types/course";
 import { useCategory } from "../hooks/useCategory";
 import Loading from "./Loading";
@@ -159,23 +160,9 @@ export const GrowthHeroSection: React.FC = () => {
               </div>
 
               {/* Lime Scribble Accent */}
-              {/* <div className="absolute -right-4 top-[15%] z-20">
-                <svg
-                  width="70"
-                  height="70"
-                  viewBox="0 0 100 100"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M20,20 Q60,10 50,40 T30,70 Q70,80 80,40"
-                    stroke="#D4FB20"
-                    strokeWidth="12"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div> */}
+              <div className="absolute w-[216px] h-[216px] -right-[40%] bottom-[30%]  z-30">
+                <img src={spiral} alt="" />
+              </div>
             </div>
           </div>
         </div>
