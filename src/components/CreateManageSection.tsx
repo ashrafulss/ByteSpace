@@ -89,7 +89,7 @@ export const CreateManageSection: React.FC = () => {
               </div>
 
               {/* 3D Yellow Spiral Doodle */}
-              <div className="absolute w-[216px] h-[216px] -right-[1%] bottom-[45%]  z-30">
+              <div className="absolute w-[216px] h-[216px] left-[47%] bottom-[45%]  z-30">
                 <img src={spiral} alt="" />
               </div>
 
