@@ -10,7 +10,7 @@ const LearningCategoryGrid: React.FC = () => {
   if (error) return null;
 
   return (
-    <section className="w-full bg-white px-4 ">
+    <section className="w-full bg-white px-4 pb-20">
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-6">
           {categories.map((item) => (
