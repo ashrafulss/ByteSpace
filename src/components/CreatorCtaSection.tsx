@@ -3,8 +3,8 @@ import React from "react";
 // Import your 3D asset images here (or pass them as props)
 import limeSpiralLeft from "../assets/yellow-spiral.png";
 import whiteZigzag from "../assets/spiral.png";
-import whiteCone from "../assets/white-triangle.png";
-import limeTorus from "../assets/yellow-spiral.png"; // Replace with yellow/lime ring asset
+import whiteCone from "../assets/white-triangle-1.png";
+import limeTorus from "../assets/yellow-circle-1.png"; // Replace with yellow/lime ring asset
 import limePyramid from "../assets/white-triangle.png"; // Replace with yellow/lime pyramid asset
 import whitePill from "../assets/yellow-rectangle.png"; // Replace with white cylinder/pill asset
 import limeSpringRight from "../assets/spiral.png";
@@ -56,7 +56,7 @@ export const CreatorCtaSection: React.FC<CreatorCtaSectionProps> = ({
         src={whiteCone}
         alt=""
         aria-hidden="true"
-        className="pointer-events-none absolute -left-6 bottom-[18%] z-10 w-[110px] sm:w-[150px] lg:left-[-10px] lg:bottom-[22%] lg:w-[180px] object-contain select-none"
+        className="pointer-events-none absolute -left-6 bottom-[18%] z-10 w-[110px] sm:w-[150px] lg:left-[-2px] lg:bottom-[20%] lg:w-[150px] object-contain select-none"
       />
 
       {/* Bottom Left: Lime Torus Ring */}
@@ -64,7 +64,7 @@ export const CreatorCtaSection: React.FC<CreatorCtaSectionProps> = ({
         src={limeTorus}
         alt=""
         aria-hidden="true"
-        className="pointer-events-none absolute left-[3%] bottom-[-15%] z-10 w-[200px] sm:w-[280px] lg:left-[4%] lg:bottom-[-20%] lg:w-[360px] object-contain select-none"
+        className="pointer-events-none absolute left-[3%] bottom-[-15%] z-10 w-[200px] sm:w-[280px] lg:left-[4%] lg:bottom-[-1%] lg:w-[360px] object-contain select-none"
       />
 
       {/* Top Right: Lime Pyramid */}
