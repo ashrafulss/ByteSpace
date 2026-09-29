@@ -13,6 +13,7 @@ import { useCategory } from "../hooks/useCategory";
 import Loading from "../components/Loading";
 import HappyStudentsCard from "../components/HappyStudentsCard";
 import CategorySection from "../components/CategorySection";
+import CourseGrid from "../components/CourseGrid";
 
 const Home: React.FC = () => {
   const { data: cardData, loading, error } = useCategory();
@@ -178,6 +179,7 @@ const Home: React.FC = () => {
         </section>
         <LogoTicker />
         <CategorySection />
+        <CourseGrid />
       </main>
     </>
   );
