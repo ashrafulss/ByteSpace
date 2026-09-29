@@ -17,6 +17,7 @@ import CourseGrid from "../components/CourseGrid";
 import LearningPathsHeader from "../components/LearningPathsHeader";
 import LearningCategoryGrid from "../components/LearningCategoryGrid";
 import GrowthHeroSection from "../components/GrowthHeroSection";
+import CreateManageSection from "../components/CreateManageSection";
 
 const Home: React.FC = () => {
   const { data: cardData, loading, error } = useCategory();
@@ -186,6 +187,7 @@ const Home: React.FC = () => {
         <LearningPathsHeader />
         <LearningCategoryGrid />
         <GrowthHeroSection />
+        <CreateManageSection />
       </main>
     </>
   );
