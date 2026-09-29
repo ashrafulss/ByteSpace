@@ -15,7 +15,7 @@ export const CourseCard: React.FC<CourseCardProps> = ({
   return (
     <div
       onClick={() => onClick?.(course)}
-      className={`group flex flex-col justify-between rounded-[28px] border border-gray-200 bg-white p-4 shadow-sm transition-all duration-300 hover:shadow-xl ${
+      className={`cursor-pointer group flex flex-col justify-between rounded-[28px] border border-gray-200 bg-white p-4 shadow-sm transition-all duration-300 hover:shadow-xl ${
         onClick ? "cursor-pointer" : ""
       } ${className}`}
     >
