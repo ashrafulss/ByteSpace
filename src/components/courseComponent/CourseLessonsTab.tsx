@@ -38,10 +38,10 @@ export const CourseLessonsTab: React.FC = () => {
     <div className="mt-8 space-y-8 font-sans">
       {/* Overview */}
       <div className="space-y-2">
-        <h3 className="text-base font-bold text-gray-900 tracking-tight">
+        <h3 className="text-[20px] font-semibold text-gray-900 tracking-tight">
           Explore the Modules
         </h3>
-        <p className="text-[13px] leading-relaxed text-gray-500">
+        <p className="text-base leading-loose text-[#4B4C53]">
           Immerse yourself in the course content as we break down each module
           into comprehensive lessons, providing practical insights and hands-on
           experiences[cite: 3].
@@ -50,22 +50,31 @@ export const CourseLessonsTab: React.FC = () => {
 
       {/* Lesson List */}
       <div>
-        <h4 className="text-sm font-bold text-gray-900 mb-4">Lesson List</h4>
+        <h4 className="text-[20px] font-semibold text-gray-900 mb-4">
+          Lesson List
+        </h4>
         <div className="space-y-5">
           {modules.map((mod) => (
             <div key={mod.id} className="flex items-start gap-4">
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[#CCFF00]">
+              <div className="flex h-[72px] w-[72px]  shrink-0 items-center justify-center rounded-2xl bg-[#CCFF00]">
                 <svg
-                  className="h-5 w-5 text-black"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
+                  width="40"
+                  height="40"
+                  viewBox="0 0 40 40"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z" />
+                  <path
+                    d="M25 13.3333V26.6667H8.33333V13.3333H25ZM26.6667 10H6.66667C5.75 10 5 10.75 5 11.6667V28.3333C5 29.25 5.75 30 6.66667 30H26.6667C27.5833 30 28.3333 29.25 28.3333 28.3333V22.5L35 29.1667V10.8333L28.3333 17.5V11.6667C28.3333 10.75 27.5833 10 26.6667 10Z"
+                    fill="#242528"
+                  />
                 </svg>
               </div>
               <div>
-                <h5 className="text-xs font-bold text-gray-900">{mod.title}</h5>
-                <p className="mt-1 text-[12px] leading-relaxed text-gray-500">
+                <h5 className="text-base font-medium text-gray-900">
+                  {mod.title}
+                </h5>
+                <p className="text-base leading-loose text-[#4B4C53]">
                   {mod.desc}
                 </p>
               </div>
@@ -76,8 +85,10 @@ export const CourseLessonsTab: React.FC = () => {
 
       {/* Lesson Content Description */}
       <div className="space-y-2">
-        <h4 className="text-sm font-bold text-gray-900">Lesson Content</h4>
-        <p className="text-[13px] leading-relaxed text-gray-500">
+        <h4 className="text-[20px] font-semibold text-gray-900 tracking-tight">
+          Lesson Content
+        </h4>
+        <p className="text-base leading-loose text-[#4B4C53]">
           Engage with each lesson through captivating video content, detailed
           textual explanations, and interactive elements. Download resources,
           complete assignments, and test your understanding with quizzes[cite:
@@ -88,10 +99,10 @@ export const CourseLessonsTab: React.FC = () => {
       {/* Progress Tracking */}
       <div className="space-y-4">
         <div>
-          <h4 className="text-sm font-bold text-gray-900">
+          <h4 className="text-[20px] font-semibold text-gray-900 tracking-tight">
             Lesson Progress Tracking
           </h4>
-          <p className="mt-1 text-[13px] leading-relaxed text-gray-500">
+          <p className="text-base leading-loose text-[#4B4C53]">
             Witness your growth as you complete lessons, with an intuitive
             progress tracking feature guiding you through your learning
             journey[cite: 3].
@@ -99,10 +110,10 @@ export const CourseLessonsTab: React.FC = () => {
         </div>
 
         <div className="rounded-2xl border border-gray-200 p-5 bg-white shadow-xs">
-          <span className="text-[11px] font-semibold text-gray-500">
+          <span className="text-[14px] font-medium text-gray-500">
             Learning Progress
           </span>
-          <div className="mt-1 text-2xl font-black text-gray-900">55%</div>
+          <div className="mt-1 text-4xl font-black text-gray-900">55%</div>
           <div className="mt-3 h-2 w-full overflow-hidden rounded-full bg-gray-100">
             <div
               className="h-full rounded-full bg-[#CCFF00]"
