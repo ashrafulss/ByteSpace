@@ -4,7 +4,7 @@ import { useCourses } from "../../hooks/useCourses";
 import { CourseCard } from "./CourseCard";
 import type { Course } from "../../types/course";
 
-interface CourseGridProps {
+export interface CourseGridProps {
   columns?: string; // Allows overriding responsive grid columns
   onCourseClick?: (course: Course) => void;
 }
