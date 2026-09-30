@@ -106,12 +106,13 @@ export const Header: React.FC = () => {
         >
           Sign In
         </Link>
-        <button
-          type="button"
+
+        <Link
+          to="/signup"
           className="cursor-pointer text-[16px] font-medium text-white"
         >
           Join Us
-        </button>
+        </Link>
         <button
           type="button"
           className="ml-2 flex items-center justify-center p-1 transition hover:opacity-80"

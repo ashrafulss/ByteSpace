@@ -51,6 +51,7 @@ const sampleCourse2: Course = {
 };
 
 export const Register: React.FC = () => {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -149,6 +150,17 @@ export const Register: React.FC = () => {
               </h2>
 
               <form onSubmit={handleSubmit} className="mt-8 space-y-5">
+                <div className="space-y-1.5">
+                  <label className="text-[14px] text-gray-700">Full Name</label>
+                  <input
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    placeholder="Jamie Davis"
+                    className="w-full rounded-xl border border-gray-200 px-4 py-3 text-xs text-gray-900 placeholder-gray-300 focus:border-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-600"
+                  />
+                </div>
+
                 <div className="space-y-1.5">
                   <label className="text-[14px] text-gray-700">Email</label>
                   <input
