@@ -15,8 +15,8 @@ export const Profile: React.FC = () => {
         <div
           className="pointer-events-none absolute inset-0 z-0 opacity-10"
           style={{
-            backgroundImage: `linear-gradient(to bottom, rgba(255, 255, 255, 1) 1px, transparent 1px)`,
-            backgroundSize: "100% 60px",
+            backgroundImage: `linear-gradient(to bottom, rgba(255, 255, 255, 1) 2px, transparent 2px)`,
+            backgroundSize: "100% 120px",
           }}
         />
 
