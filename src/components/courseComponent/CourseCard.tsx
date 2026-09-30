@@ -1,5 +1,5 @@
 import React from "react";
-import type { Course } from "../types/course";
+import type { Course } from "../../types/course";
 
 interface CourseCardProps {
   course: Course;
@@ -28,14 +28,14 @@ export const CourseCard: React.FC<CourseCardProps> = ({
         />
 
         {/* Glassmorphic Pills Overlay */}
-        <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between rounded-xl bg-white/70 px-3 py-1.5 backdrop-blur-md">
-          <span className="font-satoshi text-xs font-medium text-gray-700">
+        <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between   px-3 py-1.5 backdrop-blur-md">
+          <span className="font-satoshi text-xs font-medium text-gray-700 rounded-xl bg-[#F6F6F699] px-2 py-1">
             {course.lessonsCount} Lessons
           </span>
-          <span className="font-satoshi text-xs font-medium text-gray-700">
+          <span className="font-satoshi text-xs font-medium text-gray-700 rounded-xl bg-[#F6F6F699] px-2 py-1">
             {course.duration}
           </span>
-          <span className="font-satoshi text-xs font-medium text-gray-700">
+          <span className="font-satoshi text-xs font-medium text-gray-700 rounded-xl bg-[#F6F6F699] px-2 py-1">
             {course.commentsCount} Comments
           </span>
         </div>

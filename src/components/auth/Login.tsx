@@ -1,6 +1,54 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "./../../assets/logo.png";
+import CourseCard from "../courseComponent/CourseCard";
+import type { Course } from "../../types/course";
+import HappyStudentsCard from "../HappyStudentsCard";
+import yellowCircle from "../../assets/yellow-circle-2.png";
+import whiteSpiral from "../../assets/spiral.png";
+import yellowTriangle from "../../assets/yellow-triangle.png";
+
+const sampleCourse1: Course = {
+  id: 2,
+  title: "Build Digital Asset",
+  author: "purepearl studio",
+  thumbnail: "/images/course/digital.jpg",
+  rating: 4.5,
+  lessonsCount: 17,
+  duration: "2 hours 16 mins",
+  commentsCount: 59,
+  level: "Beginner",
+  price: 25,
+  priceType: "lifetime",
+  enrolledBadge: "26+",
+  studentAvatars: [
+    "/images/students/01.png",
+    "/images/students/02.png",
+    "/images/students/03.png",
+    "/images/students/04.png",
+  ],
+};
+
+const sampleCourse2: Course = {
+  id: 3,
+  title: "The Power of Big Data",
+  author: "purepearl studio",
+  thumbnail: "/images/course/bigdata.jpg",
+  rating: 4.5,
+  lessonsCount: 17,
+  duration: "2 hours 16 mins",
+  commentsCount: 59,
+  level: "Beginner",
+  price: 25,
+  priceType: "lifetime",
+  enrolledBadge: "26+",
+  studentAvatars: [
+    "/images/students/01.png",
+    "/images/students/02.png",
+    "/images/students/03.png",
+    "/images/students/04.png",
+  ],
+};
 
 export const Login: React.FC = () => {
   const [email, setEmail] = useState("");
@@ -39,19 +87,18 @@ export const Login: React.FC = () => {
 
         <div className="grid w-full grid-cols-1 gap-8 lg:grid-cols-12 lg:items-start">
           <div className="space-y-8 lg:col-span-6">
-            <div className="max-w-md space-y-2">
+            <div className=" space-y-2">
               <h1 className="text-[20px] font-bold tracking-tight text-white ">
                 Sign in with ease
               </h1>
               <p className="text-lg leading-relaxed text-white/80 font-normal">
-                Experience a seamless and efficient sign-in process that grants
-                you instant access to a world of knowledge.
+                Experience a seamless and efficient sign-in process that <br />{" "}
+                grants you instant access to a world of knowledge.
               </p>
             </div>
 
             {/* Graphic Cards Illustration */}
-            <div className="relative mt-10 min-h-[340px] w-full max-w-md">
-              {/* Dark Analytics Card */}
+            {/* <div className="relative mt-10 min-h-[340px] w-full max-w-md">
               <div className="absolute top-0 right-2 z-20 w-72 rounded-2xl bg-[#0F172A] p-3 shadow-2xl border border-gray-800">
                 <div className="flex items-center justify-between pb-2 border-b border-gray-800">
                   <span className="text-[10px] text-gray-400 font-mono">
@@ -80,7 +127,6 @@ export const Login: React.FC = () => {
                 </div>
               </div>
 
-              {/* Course Card 1 */}
               <div className="absolute top-20 left-0 z-10 w-72 rounded-2xl bg-white p-4 shadow-xl text-gray-900">
                 <h4 className="text-xs font-bold text-gray-900">
                   the Power of Big Data
@@ -108,7 +154,6 @@ export const Login: React.FC = () => {
                 </div>
               </div>
 
-              {/* Course Card 2 */}
               <div className="absolute top-44 left-6 z-30 w-72 rounded-2xl bg-white p-4 shadow-2xl border border-gray-100 text-gray-900">
                 <div className="flex items-center justify-between">
                   <div>
@@ -148,7 +193,6 @@ export const Login: React.FC = () => {
                 </div>
               </div>
 
-              {/* Lime Yellow Banner */}
               <div className="absolute bottom-0 right-4 z-40 w-52 rounded-2xl bg-[#CCFF00] p-3 shadow-lg">
                 <span className="text-[10px] font-bold text-black">
                   Happy Students
@@ -165,12 +209,52 @@ export const Login: React.FC = () => {
                 </div>
               </div>
 
-              {/* Decorative Yellow Ring */}
               <div className="absolute -top-4 left-10 z-30 h-10 w-10 rounded-full border-4 border-[#CCFF00] bg-transparent" />
+            </div> */}
+
+            <div className="relative w-full h-[600px]">
+              {/* Left / Bottom Card (Build Digital) */}
+
+              <img
+                src={yellowCircle}
+                alt=""
+                aria-hidden="true"
+                className="pointer-events-none absolute top-8 left-10  z-30 h-[146.72px] w-[146.72px] object-contain select-none"
+              />
+
+              <img
+                src={whiteSpiral}
+                alt=""
+                aria-hidden="true"
+                className="pointer-events-none absolute left-96 bottom-30  z-30 h-[146.72px] w-[146.72px] object-contain select-none"
+              />
+
+              <img
+                src={yellowTriangle}
+                alt=""
+                aria-hidden="true"
+                className="pointer-events-none absolute  bottom-5  z-30 h-[146.72px] w-[146.72px] object-contain select-none"
+              />
+              <CourseCard
+                course={sampleCourse1}
+                className="absolute top-28 left-0 z-10 w-[373px] h-[384px] shadow-md backdrop-blur-sm bg-white/95 border-gray-200/80"
+              />
+
+              {/* Right / Top Card (The Power of Big Data) - Shifted right & up, stacked above */}
+              <CourseCard
+                course={sampleCourse2}
+                className="absolute top-0 left-30 z-20 w-[373px] h-[384px] shadow-xl backdrop-blur-sm bg-white/95 border-gray-200/80"
+              />
+            </div>
+
+            <div className="absolute bottom-[13%] left-[25%]">
+              <HappyStudentsCard
+                className="!bg-[#D4FB20] !z-10"
+                starClassname="!fill-[#003BE2] !text-[#003BE2] "
+              />
             </div>
           </div>
 
-          {/* Right Column: White Sign-In Card */}
           <div className="lg:col-span-6 flex justify-center lg:justify-end">
             <div className="w-full max-w-lg rounded-[32px] bg-white p-8 sm:p-12 shadow-2xl text-gray-900">
               <span className="text-xs  text-[#003BE2]">Sign In</span>

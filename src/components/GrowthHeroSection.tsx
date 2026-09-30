@@ -1,6 +1,6 @@
 // src/components/GrowthHeroSection.tsx
 import React from "react";
-import CourseCard from "./CourseCard";
+import CourseCard from "./courseComponent/CourseCard";
 import studentImage from "../assets/student-01.png";
 import spiral from "../assets/yellow-spiral-02.png";
 import type { Course } from "../types/course";

@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useCourses } from "../hooks/useCourses";
-import { CourseCard } from "./CourseCard";
+import { CourseCard } from "./courseComponent/CourseCard";
 import type { Course } from "../types/course";
 
 interface CourseGridProps {
