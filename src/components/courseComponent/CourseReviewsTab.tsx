@@ -75,24 +75,26 @@ export const CourseReviewsTab: React.FC = () => {
       {/* Ratings Overview Card */}
       <div className="rounded-2xl border border-gray-200 p-6 bg-white shadow-xs">
         <div className="flex flex-col sm:flex-row items-center gap-6">
-          <div className="flex h-28 w-28 flex-col items-center justify-center rounded-2xl bg-[#CCFF00]">
-            <span className="text-xs font-medium text-gray-800">Ratings</span>
-            <span className="text-3xl font-black text-black">4.7</span>
+          <div className="flex h-[140px] w-[129px]  flex-col items-center justify-center rounded-2xl bg-[#CCFF00]">
+            <span className="text-[14px] font-medium text-gray-800">
+              Ratings
+            </span>
+            <span className="text-4xl font-semibold text-black">4.7</span>
           </div>
 
-          <div className="flex-1 w-full space-y-2">
+          <div className="flex-1 w-full ">
             {ratingsSummary.map((item) => (
               <div key={item.stars} className="flex items-center gap-3">
-                <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-gray-100">
+                <div className="h-[8px] flex-1 overflow-hidden rounded-full bg-gray-100">
                   <div
                     className="h-full rounded-full bg-[#CCFF00]"
                     style={{ width: item.width }}
                   />
                 </div>
-                <div className="flex items-center text-yellow-400 text-xs">
+                <div className="flex items-center text-[24px] text-[#4B4C53]">
                   {"★".repeat(5)}
                 </div>
-                <span className="w-8 text-right text-[11px] font-medium text-gray-400">
+                <span className="w-8 text-right text-base  text-[#4B4C53]">
                   {item.count}
                 </span>
               </div>
