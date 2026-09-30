@@ -13,6 +13,18 @@ export const CourseDetail: React.FC = () => {
   const location = useLocation();
   const { courses, loading } = useCourses();
 
+  const handleShare = () => {
+    navigate("/share");
+  };
+
+  const handleEnrollment = () => {
+    navigate("/enrollment");
+  };
+
+  const handleProfile = () => {
+    navigate("/profile");
+  };
+
   // Safely resolve current tab: default to "about" if the segment is the ID or unrecognized
   const lastSegment = location.pathname.split("/").filter(Boolean).pop();
   const currentTab =
@@ -91,6 +103,7 @@ export const CourseDetail: React.FC = () => {
 
             <button
               type="button"
+              onClick={handleShare}
               className=" inline-flex cursor-pointer items-center gap-2 rounded-full bg-[#CCFF00] px-6 py-2  font-poppins text-[16px] font-medium text-black transition hover:bg-[#b8e600]"
             >
               <svg
@@ -273,7 +286,10 @@ export const CourseDetail: React.FC = () => {
                 <span className="text-base text-[#4B4C53]">/lifetime</span>
               </div>
 
-              <button className="mt-3 w-full cursor-pointer rounded-full bg-[#CCFF00] py-2 font-poppins text-lg text-[#242528] transition hover:bg-[#b8e600] active:scale-95">
+              <button
+                className="mt-3 w-full cursor-pointer rounded-full bg-[#CCFF00] py-2 font-poppins text-lg text-[#242528] transition hover:bg-[#b8e600] active:scale-95"
+                onClick={handleEnrollment}
+              >
                 Enroll Now
               </button>
 
@@ -378,7 +394,10 @@ export const CourseDetail: React.FC = () => {
                   Future!
                 </p>
 
-                <button className="mt-3 px-4 rounded-full border-2 border-gray-200 py-1.5 text-base  text-[#4B4C53] transition hover:bg-gray-50">
+                <button
+                  className="mt-3 px-4 rounded-full border-2 border-gray-200 py-1.5 text-base  text-[#4B4C53] transition hover:bg-gray-50"
+                  onClick={handleProfile}
+                >
                   See Full Profile
                 </button>
               </div>

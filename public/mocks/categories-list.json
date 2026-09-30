@@ -1,32 +1,172 @@
 [
-  { "id": 1, "name": "Featured" },
-  { "id": 2, "name": "Music" },
-  { "id": 3, "name": "Drawing & Painting" },
-  { "id": 4, "name": "Marketing" },
-  { "id": 5, "name": "Animation" },
-  { "id": 6, "name": "Social Media" },
-  { "id": 7, "name": "UI/UX Design" },
-  { "id": 8, "name": "Creative Marketing" },
-  { "id": 9, "name": "Digital Illustration" },
-  { "id": 10, "name": "Film & Video" },
-  { "id": 11, "name": "Crafts" },
-  { "id": 12, "name": "Freelance & Entrepreneurship" },
-  { "id": 13, "name": "Graphic Design" },
-  { "id": 14, "name": "Photography" },
-  { "id": 15, "name": "Productivity" },
-  { "id": 16, "name": "Web Development" },
-  { "id": 17, "name": "Data Science" },
-  { "id": 18, "name": "Cooking" },
-  { "id": 19, "name": "3D Modeling" },
-  { "id": 20, "name": "Game Development" },
-  { "id": 21, "name": "Mobile App Development" },
-  { "id": 22, "name": "Cybersecurity" },
-  { "id": 23, "name": "Copywriting" },
-  { "id": 24, "name": "Fashion Design" },
-  { "id": 25, "name": "Interior Design" },
-  { "id": 26, "name": "Financial Literacy" },
-  { "id": 27, "name": "AI & Machine Learning" },
-  { "id": 28, "name": "Public Speaking" },
-  { "id": 29, "name": "Sound Engineering" },
-  { "id": 30, "name": "Creative Writing" }
+  {
+    "id": 1,
+    "name": "Featured",
+    "slug": "featured",
+    "route": "/courses/featured"
+  },
+  { "id": 2, "name": "Music", "slug": "music", "route": "/courses/music" },
+  {
+    "id": 3,
+    "name": "Drawing & Painting",
+    "slug": "drawing-and-painting",
+    "route": "/courses/drawing-and-painting"
+  },
+  {
+    "id": 4,
+    "name": "Marketing",
+    "slug": "marketing",
+    "route": "/courses/marketing"
+  },
+  {
+    "id": 5,
+    "name": "Animation",
+    "slug": "animation",
+    "route": "/courses/animation"
+  },
+  {
+    "id": 6,
+    "name": "Social Media",
+    "slug": "social-media",
+    "route": "/courses/social-media"
+  },
+  {
+    "id": 7,
+    "name": "UI/UX Design",
+    "slug": "ui-ux-design",
+    "route": "/courses/ui-ux-design"
+  },
+  {
+    "id": 8,
+    "name": "Creative Marketing",
+    "slug": "creative-marketing",
+    "route": "/courses/creative-marketing"
+  },
+  {
+    "id": 9,
+    "name": "Digital Illustration",
+    "slug": "digital-illustration",
+    "route": "/courses/digital-illustration"
+  },
+  {
+    "id": 10,
+    "name": "Film & Video",
+    "slug": "film-and-video",
+    "route": "/courses/film-and-video"
+  },
+  { "id": 11, "name": "Crafts", "slug": "crafts", "route": "/courses/crafts" },
+  {
+    "id": 12,
+    "name": "Freelance & Entrepreneurship",
+    "slug": "freelance-and-entrepreneurship",
+    "route": "/courses/freelance-and-entrepreneurship"
+  },
+  {
+    "id": 13,
+    "name": "Graphic Design",
+    "slug": "graphic-design",
+    "route": "/courses/graphic-design"
+  },
+  {
+    "id": 14,
+    "name": "Photography",
+    "slug": "photography",
+    "route": "/courses/photography"
+  },
+  {
+    "id": 15,
+    "name": "Productivity",
+    "slug": "productivity",
+    "route": "/courses/productivity"
+  },
+  {
+    "id": 16,
+    "name": "Web Development",
+    "slug": "web-development",
+    "route": "/courses/web-development"
+  },
+  {
+    "id": 17,
+    "name": "Data Science",
+    "slug": "data-science",
+    "route": "/courses/data-science"
+  },
+  {
+    "id": 18,
+    "name": "Cooking",
+    "slug": "cooking",
+    "route": "/courses/cooking"
+  },
+  {
+    "id": 19,
+    "name": "3D Modeling",
+    "slug": "3d-modeling",
+    "route": "/courses/3d-modeling"
+  },
+  {
+    "id": 20,
+    "name": "Game Development",
+    "slug": "game-development",
+    "route": "/courses/game-development"
+  },
+  {
+    "id": 21,
+    "name": "Mobile App Development",
+    "slug": "mobile-app-development",
+    "route": "/courses/mobile-app-development"
+  },
+  {
+    "id": 22,
+    "name": "Cybersecurity",
+    "slug": "cybersecurity",
+    "route": "/courses/cybersecurity"
+  },
+  {
+    "id": 23,
+    "name": "Copywriting",
+    "slug": "copywriting",
+    "route": "/courses/copywriting"
+  },
+  {
+    "id": 24,
+    "name": "Fashion Design",
+    "slug": "fashion-design",
+    "route": "/courses/fashion-design"
+  },
+  {
+    "id": 25,
+    "name": "Interior Design",
+    "slug": "interior-design",
+    "route": "/courses/interior-design"
+  },
+  {
+    "id": 26,
+    "name": "Financial Literacy",
+    "slug": "financial-literacy",
+    "route": "/courses/financial-literacy"
+  },
+  {
+    "id": 27,
+    "name": "AI & Machine Learning",
+    "slug": "ai-and-machine-learning",
+    "route": "/courses/ai-and-machine-learning"
+  },
+  {
+    "id": 28,
+    "name": "Public Speaking",
+    "slug": "public-speaking",
+    "route": "/courses/public-speaking"
+  },
+  {
+    "id": 29,
+    "name": "Sound Engineering",
+    "slug": "sound-engineering",
+    "route": "/courses/sound-engineering"
+  },
+  {
+    "id": 30,
+    "name": "Creative Writing",
+    "slug": "creative-writing",
+    "route": "/courses/creative-writing"
+  }
 ]

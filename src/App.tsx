@@ -8,6 +8,7 @@ import { ScrollToHash } from "./components/ScrollToHash";
 import CourseDetail from "./components/courseComponent/CourseDetail";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
+import PageNotFound from "./components/auth/PageNotFound";
 
 const App: React.FC = () => {
   return (
@@ -17,8 +18,9 @@ const App: React.FC = () => {
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
 
-          {/* Catch /course/:id and all sub-routes (/about, /lessons, /reviews) */}
           <Route path="/course/:id/*" element={<CourseDetail />} />
+
+          <Route path="*" element={<PageNotFound />} />
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Register />} />

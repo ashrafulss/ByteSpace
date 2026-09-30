@@ -10,6 +10,10 @@ export const Header: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
+  const handleAddToCart = () => {
+    navigate("/cart");
+  };
+
   const handleNavClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
     targetId: string,
@@ -108,7 +112,7 @@ export const Header: React.FC = () => {
         </Link>
 
         <Link
-          to="/signup"
+          to="/joinus"
           className="cursor-pointer text-[16px] font-medium text-white"
         >
           Join Us
@@ -117,6 +121,7 @@ export const Header: React.FC = () => {
           type="button"
           className="ml-2 flex items-center justify-center p-1 transition hover:opacity-80"
           aria-label="Cart"
+          onClick={handleAddToCart}
         >
           <img src={cartIcon} alt="Cart" className="h-6 w-6 object-contain" />
         </button>

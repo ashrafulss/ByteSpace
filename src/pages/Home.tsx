@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import studentImage from "../assets/student-01.png";
 import searchicon from "../assets/search.png";
 import yellowspiral from "../assets/yellow-spiral.png";
@@ -21,9 +21,23 @@ import CreateManageSection from "../components/CreateManageSection";
 import CreatorCtaSection from "../components/CreatorCtaSection";
 import TestimonialsSection from "../components/TestimonialsSection";
 import Footer from "../components/Footer";
+import { useNavigate } from "react-router-dom";
 
 const Home: React.FC = () => {
   const { data: cardData, loading, error } = useCategory();
+
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const navigate = useNavigate();
+
+  const handleSearch = () => {
+    console.log("catch the search input value:-----", searchQuery);
+    navigate("/search");
+  };
+
+  const handleJoinAsCreator = () => {
+    navigate("/creator");
+  };
 
   if (loading) {
     return <Loading />;
@@ -94,6 +108,8 @@ const Home: React.FC = () => {
               />
               <input
                 type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Course, topic, creator"
                 className="w-full bg-transparent text-[18px] text-gray-800 outline-none placeholder:text-gray-400"
               />
@@ -102,6 +118,7 @@ const Home: React.FC = () => {
             <button
               type="button"
               className="flex h-[52px] shrink-0 cursor-pointer items-center justify-center rounded-full bg-[#ccff00] px-8 text-[18px] text-black transition hover:bg-[#b8e600] active:scale-95"
+              onClick={handleSearch}
             >
               Search
             </button>
@@ -181,7 +198,7 @@ const Home: React.FC = () => {
       <LearningCategoryGrid />
       <GrowthHeroSection />
       <CreateManageSection />
-      <CreatorCtaSection />
+      <CreatorCtaSection onJoinClick={handleJoinAsCreator} />
       <TestimonialsSection />
     </main>
   );

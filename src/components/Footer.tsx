@@ -1,7 +1,13 @@
 import React from "react";
 import logo from "../assets/logo.png";
+import { Link, useNavigate } from "react-router-dom";
 
 export const Footer: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleSearch = () => {
+    navigate("/search");
+  };
   return (
     <footer className="w-full border-t border-gray-100 bg-white pb-12 pt-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12">
@@ -11,7 +17,7 @@ export const Footer: React.FC = () => {
           <div className="flex flex-col justify-between">
             <div>
               {/* Logo */}
-              <div className="flex items-center gap-2.5">
+              <Link to="/" className="flex items-center gap-2.5">
                 <img
                   src={logo}
                   alt="ByteSpace Logo"
@@ -20,7 +26,7 @@ export const Footer: React.FC = () => {
                 <span className="font-clash text-[24px] font-bold leading-none tracking-normal text-gray-900">
                   ByteSpace
                 </span>
-              </div>
+              </Link>
 
               <p className="mt-4  font-satoshi text-sm text-[#525866] ">
                 Stay Up to date with our latest features and releases by joining
@@ -37,6 +43,7 @@ export const Footer: React.FC = () => {
                 <button
                   type="button"
                   className="cursor-pointer flex h-[52px] shrink-0 items-center justify-center rounded-full bg-[#ccff00] px-8 text-[18px]  text-black transition hover:bg-[#b8e600] active:scale-95"
+                  onClick={handleSearch}
                 >
                   Search
                 </button>

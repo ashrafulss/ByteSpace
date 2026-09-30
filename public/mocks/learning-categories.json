@@ -1,8 +1,44 @@
 [
-  { "id": 1, "title": "Design", "icon": "design" },
-  { "id": 2, "title": "Development", "icon": "development" },
-  { "id": 3, "title": "IT & Software", "icon": "it-software" },
-  { "id": 4, "title": "Business", "icon": "business" },
-  { "id": 5, "title": "Marketing", "icon": "marketing" },
-  { "id": 6, "title": "Photography", "icon": "photography" }
+  {
+    "id": 1,
+    "title": "Design",
+    "icon": "design",
+    "slug": "design",
+    "route": "/courses/design"
+  },
+  {
+    "id": 2,
+    "title": "Development",
+    "icon": "development",
+    "slug": "development",
+    "route": "/courses/development"
+  },
+  {
+    "id": 3,
+    "title": "IT & Software",
+    "icon": "it-software",
+    "slug": "it-and-software",
+    "route": "/courses/it-and-software"
+  },
+  {
+    "id": 4,
+    "title": "Business",
+    "icon": "business",
+    "slug": "business",
+    "route": "/courses/business"
+  },
+  {
+    "id": 5,
+    "title": "Marketing",
+    "icon": "marketing",
+    "slug": "marketing",
+    "route": "/courses/marketing"
+  },
+  {
+    "id": 6,
+    "title": "Photography",
+    "icon": "photography",
+    "slug": "photography",
+    "route": "/courses/photography"
+  }
 ]

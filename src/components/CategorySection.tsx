@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useCategoryList } from "../hooks/useCategoryList";
+import { useNavigate } from "react-router-dom";
 
 const INITIAL_VISIBLE_COUNT = 18; // Number of pills shown initially
 
@@ -7,6 +8,14 @@ const CategorySection: React.FC = () => {
   const { categoryList, loading, error } = useCategoryList();
   const [activeCategory, setActiveCategory] = useState<string>("Featured");
   const [showAll, setShowAll] = useState<boolean>(false);
+
+  const navigate = useNavigate();
+
+  const handleFeature = (route: string, name: string) => {
+    setActiveCategory(name);
+    console.log(route);
+    navigate(route);
+  };
 
   if (loading) {
     return (
@@ -53,7 +62,7 @@ const CategorySection: React.FC = () => {
             return (
               <button
                 key={category.id}
-                onClick={() => setActiveCategory(category.name)}
+                onClick={() => handleFeature(category.route, category.name)}
                 className={`inline-flex items-center justify-center rounded-full px-5 py-2.5 font-satoshi text-[16px] leading-[120%] tracking-normal transition-all duration-200 cursor-pointer ${
                   isActive
                     ? "bg-[#D1F300] font-semibold text-gray-900 shadow-sm"

@@ -2,9 +2,16 @@ import React from "react";
 import { useLearningCategories } from "../hooks/useLearningCategories";
 import { CategoryCard } from "./CategoryCard";
 import { getCategoryIcon } from "../utils/getCategoryIcon";
+import { useNavigate } from "react-router-dom";
 
 const LearningCategoryGrid: React.FC = () => {
   const { categories, loading, error } = useLearningCategories();
+
+  const navigate = useNavigate();
+
+  const handleCatagory = (route: string) => {
+    navigate(route);
+  };
 
   if (loading) return <div>Loading...</div>;
   if (error) return null;
@@ -22,7 +29,7 @@ const LearningCategoryGrid: React.FC = () => {
                 // Map string key from JSON -> React Node component
                 icon: getCategoryIcon(item.icon),
               }}
-              onClick={(cat) => console.log("Selected:", cat.title)}
+              onClick={() => handleCatagory(item.route)}
             />
           ))}
         </div>
