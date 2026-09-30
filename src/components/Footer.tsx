@@ -10,7 +10,10 @@ export const Footer: React.FC = () => {
   };
   return (
     <footer className="w-full border-t border-gray-100 bg-white pb-12 pt-16">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12">
+      <div
+        className="w-full py-8"
+        style={{ paddingLeft: "8.333%", paddingRight: "8.333%" }}
+      >
         {/* 50 / 50 Grid Layout */}
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Left Side (50% Width): Logo & Newsletter */}

@@ -56,7 +56,10 @@ export const TestimonialsSection: React.FC = () => {
         }}
       />
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-12">
+      <div
+        className="w-full py-8"
+        style={{ paddingLeft: "8.333%", paddingRight: "8.333%" }}
+      >
         {/* Header Grid */}
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:items-start lg:gap-12">
           <div className="lg:col-span-6">

@@ -48,7 +48,10 @@ const CourseGrid: React.FC<CourseGridProps> = ({
 
   return (
     <section id="courses" className="w-full bg-white px-4">
-      <div className="mx-auto max-w-7xl">
+      <div
+        className="w-full py-8"
+        style={{ paddingLeft: "8.333%", paddingRight: "8.333%" }}
+      >
         <div className={`grid gap-6 ${columns}`}>
           {courses.map((course) => (
             <CourseCard

@@ -21,8 +21,10 @@ export const PageNotFound: React.FC = () => {
           }}
         />
 
-        {/* Main Content Area */}
-        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-12 text-center flex flex-col items-center">
+        <div
+          className="w-full py-8  flex flex-col items-center"
+          style={{ paddingLeft: "8.333%", paddingRight: "8.333%" }}
+        >
           {/* Big Gradient 404 Text - Scaled for Mobile, Tablet & Desktop */}
           <h1 className="text-[160px] sm:text-[280px] md:text-[360px] lg:text-[480px] font-semibold tracking-tighter leading-none bg-gradient-to-b from-[#D4FB20] to-[#709800] bg-clip-text text-transparent select-none">
             404

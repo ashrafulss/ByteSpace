@@ -51,7 +51,9 @@ export const GrowthHeroSection: React.FC = () => {
         className="pointer-events-none absolute   -top-20 h-[650px] w-[650px] rounded-full blur-[110px] opacity-70"
         style={{
           background:
-            "radial-gradient(circle, rgba(226,253,82,0.85) 0%, rgba(212,251,32,0.4) 50%, rgba(255,255,255,0) 80%)",
+            "radial-gradient(circle, rgba(226,253,82,0.85) 0%, rgba(212,251,32,0.4) 50%, rgba(255,255,255,0) 80%) ",
+          paddingLeft: "8.333%",
+          paddingRight: "8.333%",
         }}
       />
 
@@ -73,7 +75,10 @@ export const GrowthHeroSection: React.FC = () => {
         }}
       />
 
-      <div className="relative mx-auto max-w-7xl  ">
+      <div
+        className="w-full py-8"
+        style={{ paddingLeft: "8.333%", paddingRight: "8.333%" }}
+      >
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
           {/* Left Column: Title, Subtitle & Metrics */}
           <div className="lg:col-span-6 pt-44">

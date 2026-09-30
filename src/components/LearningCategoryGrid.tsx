@@ -17,8 +17,11 @@ const LearningCategoryGrid: React.FC = () => {
   if (error) return null;
 
   return (
-    <section className="w-full bg-white px-4 pb-20">
-      <div className="mx-auto max-w-7xl">
+    <section className="w-full bg-white px-4">
+      <div
+        className="w-full py-8"
+        style={{ paddingLeft: "8.333%", paddingRight: "8.333%" }}
+      >
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-6">
           {categories.map((item) => (
             <CategoryCard

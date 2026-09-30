@@ -18,7 +18,10 @@ export const LogoTicker: React.FC = () => {
   return (
     <section className="relative z-20 w-full bg-[#f5f5f5] py-10 lg:py-14">
       {/* Aligned to 12-column grid padding */}
-      <div className="mx-auto max-w-[1920px] px-[8.333%]">
+      <div
+        className="w-full py-8"
+        style={{ paddingLeft: "8.333%", paddingRight: "8.333%" }}
+      >
         <div className="flex flex-wrap items-center justify-between gap-8 sm:gap-10 md:gap-12">
           {logos.map((logo) => (
             <div

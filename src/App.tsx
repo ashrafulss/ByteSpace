@@ -9,6 +9,7 @@ import CourseDetail from "./components/courseComponent/CourseDetail";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 import PageNotFound from "./components/auth/PageNotFound";
+import Profile from "./components/creator/Profile";
 
 const App: React.FC = () => {
   return (
@@ -19,6 +20,8 @@ const App: React.FC = () => {
           <Route path="/" element={<Home />} />
 
           <Route path="/course/:id/*" element={<CourseDetail />} />
+
+          <Route path="/profile" element={<Profile />} />
 
           <Route path="*" element={<PageNotFound />} />
         </Route>

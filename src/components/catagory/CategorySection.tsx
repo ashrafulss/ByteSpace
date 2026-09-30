@@ -41,9 +41,11 @@ const CategorySection: React.FC = () => {
     : categoryList.slice(0, INITIAL_VISIBLE_COUNT);
 
   return (
-    <section className="bg-white px-4 py-16 text-center">
-      <div className="mx-auto max-w-4xl">
-        {/* Main Heading */}
+    <section className="w-full bg-white px-[200px]">
+      <div
+        className="w-full py-8"
+        style={{ paddingLeft: "8.333%", paddingRight: "8.333%" }}
+      >
         <h2 className="font-poppins text-center text-[44px] font-semibold leading-[120%] tracking-[-0.01em] text-gray-900">
           Discover Your Passion, <br /> Build Your Skills
         </h2>

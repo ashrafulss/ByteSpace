@@ -86,7 +86,10 @@ export const CourseDetail: React.FC = () => {
           }}
         />
 
-        <div className="relative z-10 mx-auto max-w-7xl px-4 pb-28 pt-8 sm:px-6 lg:px-12">
+        <div
+          className="w-full py-8"
+          style={{ paddingLeft: "8.333%", paddingRight: "8.333%" }}
+        >
           <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
             <div>
               <h1 className="font-poppins text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-4xl">
@@ -187,8 +190,10 @@ export const CourseDetail: React.FC = () => {
         </div>
       </div>
 
-      {/* Main Content */}
-      <div className="relative z-20 mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-12">
+      <div
+        className="w-full py-8"
+        style={{ paddingLeft: "8.333%", paddingRight: "8.333%" }}
+      >
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
           {/* Left Column */}
           <div className="pt-8 lg:col-span-8">
@@ -236,7 +241,7 @@ export const CourseDetail: React.FC = () => {
 
           {/* Right Floating Sidebar */}
           <div className="relative lg:col-span-4">
-            <div className="rounded-3xl bg-white p-6 text-gray-900 shadow-2xl  lg:absolute lg:-top-[600px] ml-10 lg:w-full">
+            <div className="rounded-3xl bg-white p-6 text-gray-900 shadow-2xl  lg:absolute lg:-top-[695px] ml-10 lg:w-full">
               <h2 className="font-poppins text-[20px] font-semibold">
                 112 Lessons (24 hours)
               </h2>
