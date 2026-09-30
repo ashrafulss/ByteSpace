@@ -1,7 +1,7 @@
 import React from "react";
-import girlImage from "../assets/girl.png";
-import HappyStudentsCard from "./HappyStudentsCard";
-import spiral from "../assets/yellow-spiral-03.png";
+import girlImage from "../../assets/girl.png";
+import HappyStudentsCard from "../HappyStudentsCard";
+import spiral from "../../assets/yellow-spiral-03.png";
 
 export const CreateManageSection: React.FC = () => {
   const features = [

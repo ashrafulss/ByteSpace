@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useCategoryList } from "../hooks/useCategoryList";
+import { useCategoryList } from "../../hooks/useCategoryList";
 import { useNavigate } from "react-router-dom";
 
 const INITIAL_VISIBLE_COUNT = 18; // Number of pills shown initially

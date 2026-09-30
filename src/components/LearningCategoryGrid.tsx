@@ -1,6 +1,6 @@
 import React from "react";
 import { useLearningCategories } from "../hooks/useLearningCategories";
-import { CategoryCard } from "./CategoryCard";
+import { CategoryCard } from "./catagory/CategoryCard";
 import { getCategoryIcon } from "../utils/getCategoryIcon";
 import { useNavigate } from "react-router-dom";
 

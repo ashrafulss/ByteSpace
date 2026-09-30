@@ -1,13 +1,12 @@
 import React from "react";
 
-// Import your 3D asset images here (or pass them as props)
-import limeSpiralLeft from "../assets/yellow-spiral.png";
-import whiteZigzag from "../assets/spiral.png";
-import whiteCone from "../assets/white-triangle-1.png";
-import limeTorus from "../assets/yellow-circle-1.png"; // Replace with yellow/lime ring asset
-import limePyramid from "../assets/yellow-triangle.png"; // Replace with yellow/lime pyramid asset
-import whitePill from "../assets/white-squre.png"; // Replace with white cylinder/pill asset
-import limeSpringRight from "../assets/yellow-spiral-02.png";
+import limeSpiralLeft from "../../assets/yellow-spiral.png";
+import whiteZigzag from "../../assets/spiral.png";
+import whiteCone from "../../assets/white-triangle-1.png";
+import limeTorus from "../../assets/yellow-circle-1.png";
+import limePyramid from "../../assets/yellow-triangle.png";
+import whitePill from "../../assets/white-squre.png";
+import limeSpringRight from "../../assets/yellow-spiral-02.png";
 
 interface CreatorCtaSectionProps {
   onJoinClick?: () => void;

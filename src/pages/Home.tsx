@@ -12,16 +12,18 @@ import whiteSpring from "../assets/spiral.png";
 import { useCategory } from "../hooks/useCategory";
 import Loading from "../components/Loading";
 import HappyStudentsCard from "../components/HappyStudentsCard";
-import CategorySection from "../components/CategorySection";
-import CourseGrid from "../components/CourseGrid";
+
+import CourseGrid from "../components/courseComponent/CourseGrid";
 import LearningPathsHeader from "../components/LearningPathsHeader";
 import LearningCategoryGrid from "../components/LearningCategoryGrid";
 import GrowthHeroSection from "../components/GrowthHeroSection";
-import CreateManageSection from "../components/CreateManageSection";
-import CreatorCtaSection from "../components/CreatorCtaSection";
+
+import CreatorCtaSection from "../components/creator/CreatorCtaSection";
 import TestimonialsSection from "../components/TestimonialsSection";
 import Footer from "../components/Footer";
 import { useNavigate } from "react-router-dom";
+import CategorySection from "../components/catagory/CategorySection";
+import CreateManageSection from "../components/creator/CreateManageSection";
 
 const Home: React.FC = () => {
   const { data: cardData, loading, error } = useCategory();
