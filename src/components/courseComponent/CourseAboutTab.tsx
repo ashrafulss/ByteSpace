@@ -1,4 +1,8 @@
 import React from "react";
+import sneak1 from "../../assets/sneak-1.jpg";
+import sneak2 from "../../assets/sneak-2.jpg";
+import sneak3 from "../../assets/sneak-3.jpg";
+import sneak4 from "../../assets/spneak-4.jpg";
 
 export const CourseAboutTab: React.FC = () => {
   const keyPoints = [
@@ -16,10 +20,10 @@ export const CourseAboutTab: React.FC = () => {
     <div className="mt-8 space-y-8 font-sans">
       {/* Description Section */}
       <div className="space-y-4 text-[13px] leading-[1.65] text-gray-500 font-normal">
-        <h3 className="text-base font-bold text-gray-900 tracking-tight">
+        <h3 className="text-[20px] font-semibold text-gray-900 tracking-tight">
           Description
         </h3>
-        <p>
+        <p className="text-base leading-loose text-[#4B4C53]">
           Embark on an enlightening exploration into the world of digital
           creation with our comprehensive course, "Build Digital Assets: A
           Comprehensive Guide." This transformative learning experience invites
@@ -27,77 +31,76 @@ export const CourseAboutTab: React.FC = () => {
           content. From laying the groundwork with foundational concepts to
           mastering advanced techniques, this guide is meticulously curated to
           empower you with the skills essential for navigating the dynamic
-          landscape of digital asset creation[cite: 2].
+          landscape of digital asset creation.
         </p>
-        <p>
+        <p className="text-base leading-loose text-[#4B4C53]">
           In the initial modules, you'll establish a solid foundation by
           immersing yourself in the foundational concepts that form the backbone
           of digital asset creation. Understand the fundamental elements that
           constitute compelling digital content and gain proficiency in
           leveraging these elements to communicate effectively in the digital
-          realm[cite: 2].
+          realm.
         </p>
-        <p>
+        <p className="text-base leading-loose text-[#4B4C53]">
           As you progress through the course, you'll ascend to higher levels of
           expertise, delving into the nuances of design principles that drive
           impactful creations. Uncover the secrets behind effective visual
           communication, exploring color theory, typography, and layout
           strategies that elevate your digital assets to new heights. Engage in
           hands-on exercises that reinforce your understanding, allowing you to
-          apply these principles in practical scenarios[cite: 2].
+          apply these principles in practical scenarios.
         </p>
       </div>
 
       {/* Sneak Peak Gallery */}
       <div>
-        <h4 className="text-sm font-bold text-gray-900">Sneak Peak</h4>
+        <h4 className="text-[20px] font-semibold text-gray-900">Sneak Peak</h4>
         <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-4">
           <img
-            src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=400&q=80"
+            src={sneak1}
             alt="Sneak peak 1"
-            className="h-28 w-full rounded-2xl object-cover shadow-sm"
+            className="h-[125px] w-[167px] rounded-2xl object-cover shadow-sm"
           />
           <img
-            src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=400&q=80"
+            src={sneak2}
             alt="Sneak peak 2"
-            className="h-28 w-full rounded-2xl object-cover shadow-sm"
+            className="h-[125px] w-[167px]  rounded-2xl object-cover shadow-sm"
           />
           <img
-            src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=400&q=80"
+            src={sneak3}
             alt="Sneak peak 3"
-            className="h-28 w-full rounded-2xl object-cover shadow-sm"
+            className="h-[125px] w-[167px]  rounded-2xl object-cover shadow-sm"
           />
           <img
-            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=400&q=80"
+            src={sneak4}
             alt="Sneak peak 4"
-            className="h-28 w-full rounded-2xl object-cover shadow-sm"
+            className="h-[125px] w-[167px]  rounded-2xl object-cover shadow-sm"
           />
         </div>
       </div>
 
       {/* Key Points List */}
       <div>
-        <h4 className="text-sm font-bold text-gray-900">Key Points</h4>
-        <ul className="mt-4 space-y-3">
+        <h4 className="text-[20px] font-semibold text-gray-900">Key Points</h4>
+        <ul className="mt-4 space-y-3 text-base leading-loose text-[#4B4C53]">
           {keyPoints.map((point, index) => (
             <li
               key={index}
               className="flex items-center gap-2.5 text-[13px] font-medium text-gray-600"
             >
-              <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#1859FF] text-white">
-                <svg
-                  className="h-3 w-3 stroke-[3]"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-              </span>
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z"
+                  fill="#003BE2"
+                />
+              </svg>
+
               {point}
             </li>
           ))}

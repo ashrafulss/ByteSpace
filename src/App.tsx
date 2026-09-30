@@ -5,7 +5,7 @@ import MainLayout from "./layouts/MainLayout";
 import Home from "./pages/Home";
 
 import { ScrollToHash } from "./components/ScrollToHash";
-import CourseDetail from "./components/CourseDetail";
+import CourseDetail from "./components/courseComponent/CourseDetail";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 
