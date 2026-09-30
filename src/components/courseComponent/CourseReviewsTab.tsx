@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+import review1 from "../../assets/review-1.png";
+import review2 from "../../assets/review-2.png";
+import review3 from "../../assets/review-3.png";
+import review4 from "../../assets/review-4.png";
 
 export const CourseReviewsTab: React.FC = () => {
   const [selectedFilter, setSelectedFilter] = useState("All rating");
@@ -17,8 +21,7 @@ export const CourseReviewsTab: React.FC = () => {
       name: "PurePearl Studio",
       role: "UI/UX Designer",
       time: "a year ago",
-      avatar:
-        "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80",
+      avatar: review1,
       comment:
         '"The course provided me with a comprehensive understanding of digital asset creation. The lessons were in-depth, practical, and immediately applicable to my work. Highly recommended!"',
     },
@@ -27,8 +30,7 @@ export const CourseReviewsTab: React.FC = () => {
       name: "Albert Flores",
       role: "UI/UX Designer",
       time: "a year ago",
-      avatar:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80",
+      avatar: review2,
       comment:
         "This course transformed my approach to digital design. The combination of theory, hands-on exercises, and real-world applications made it a truly enriching experience. Excited to implement what I've learned!",
     },
@@ -37,23 +39,32 @@ export const CourseReviewsTab: React.FC = () => {
       name: "Cody Fisher",
       role: "UI/UX Designer",
       time: "a year ago",
-      avatar:
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80",
+      avatar: review3,
       comment:
         "The project showcase and critique module created a collaborative environment where I could showcase my work, receive valuable feedback, and refine my skills. It added a unique and valuable dimension to the learning process.",
     },
+
+    {
+      id: 4,
+      name: "Brooklyn Simmons",
+      role: "UI/UX Designer",
+      time: "a year ago",
+      avatar: review4,
+      comment:
+        "The lessons on optimizing digital assets for various platforms were particularly insightful. The course adapts to the evolving digital landscape, and the engaging content kept me motivated throughout.",
+    },
   ];
 
-  const filters = ["All rating", "★ 5", "★ 4", "★ 3", "★ 2", "★ 1"];
+  const filters = ["All rating", "5", "4", "3", "2", "1"];
 
   return (
     <div className="mt-8 space-y-8 font-sans">
       {/* Intro */}
       <div className="space-y-2">
-        <h3 className="text-base font-bold text-gray-900 tracking-tight">
+        <h3 className="text-[20px] font-semibold text-gray-900 tracking-tight">
           What Learners Are Saying
         </h3>
-        <p className="text-[13px] leading-relaxed text-gray-500">
+        <p className="text-base leading-loose text-[#4B4C53]">
           Discover what our learners have to say about their experience with
           "Build Digital Assets: A Comprehensive Guide." Read reviews and
           ratings from individuals who have embarked on the transformative
@@ -92,21 +103,26 @@ export const CourseReviewsTab: React.FC = () => {
 
       {/* Individual Reviews Section */}
       <div className="space-y-4">
-        <h4 className="text-sm font-bold text-gray-900">Individual Reviews:</h4>
+        <h4 className="text-[20px] font-semibold text-gray-900 tracking-tight">
+          Individual Reviews:
+        </h4>
 
         {/* Filter Pills */}
         <div className="flex flex-wrap items-center gap-2">
-          {filters.map((filter) => (
+          {filters.map((filter, index) => (
             <button
               key={filter}
               type="button"
               onClick={() => setSelectedFilter(filter)}
-              className={`cursor-pointer rounded-full px-4 py-1.5 text-xs font-semibold transition ${
+              className={`cursor-pointer rounded-full px-4 py-1 text-base font-medium transition ${
                 selectedFilter === filter
                   ? "bg-[#CCFF00] text-black"
                   : "bg-gray-100 text-gray-600 hover:bg-gray-200"
               }`}
             >
+              {index !== 0 && (
+                <span className="mr-1 text-[24px] text-[#4B4C53]">★</span>
+              )}
               {filter}
             </button>
           ))}
@@ -117,7 +133,7 @@ export const CourseReviewsTab: React.FC = () => {
           {reviews.map((rev) => (
             <div
               key={rev.id}
-              className="rounded-2xl border border-gray-200 p-5 bg-white space-y-3"
+              className="rounded-2xl border-2 border-gray-200 p-5 bg-white space-y-3"
             >
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
@@ -127,18 +143,22 @@ export const CourseReviewsTab: React.FC = () => {
                     className="h-10 w-10 rounded-full object-cover"
                   />
                   <div>
-                    <h5 className="text-xs font-bold text-gray-900">
+                    <h5 className="text-lg font-medium text-gray-900">
                       {rev.name}
                     </h5>
-                    <p className="text-[11px] text-gray-400">{rev.role}</p>
+                    <p className="text-base leading-loose text-[#4B4C53]">
+                      {rev.role}
+                    </p>
                   </div>
                 </div>
-                <span className="text-[11px] text-gray-400">{rev.time}</span>
+                <span className="text-base leading-loose text-[#4B4C53]">
+                  {rev.time}
+                </span>
               </div>
 
-              <div className="text-xs text-yellow-400">★★★★★</div>
+              <div className="text-[24px] text-[#4B4C53]">★★★★★</div>
 
-              <p className="text-[12px] leading-relaxed text-gray-500 font-normal">
+              <p className="text-base leading-loose text-[#4B4C53]">
                 {rev.comment}
               </p>
             </div>
