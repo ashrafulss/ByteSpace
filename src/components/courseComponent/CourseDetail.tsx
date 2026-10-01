@@ -36,16 +36,7 @@ export const CourseDetail: React.FC = () => {
 
   const course = courses.find((c) => String(c.id) === id);
 
-  const keyPoints = [
-    "Foundational Concepts",
-    "Design Principles Mastery",
-    "Advanced Techniques in Digital Creation",
-    "Project Showcase and Critique",
-    "Optimization for Various Platforms",
-    "Digital Asset Management Best Practices",
-    "Monetization Strategies",
-    "Capstone Project: Building Your Portfolio",
-  ];
+
 
   if (loading) {
     return (

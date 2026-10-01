@@ -1,13 +1,4 @@
 import React from "react";
-// Import Lucide icons or use custom SVG elements
-import {
-  Palette,
-  Code,
-  Monitor,
-  Briefcase,
-  Megaphone,
-  Camera,
-} from "lucide-react";
 
 export const getCategoryIcon = (iconName: string): React.ReactNode => {
   switch (iconName) {
