@@ -34,7 +34,7 @@ const Home: React.FC = () => {
 
   const handleSearch = () => {
     console.log("catch the search input value:-----", searchQuery);
-    navigate("/search");
+    navigate("/search-page");
   };
 
   const handleJoinAsCreator = () => {
