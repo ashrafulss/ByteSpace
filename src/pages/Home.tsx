@@ -3,7 +3,6 @@ import studentImage from "../assets/student-01.png";
 import searchicon from "../assets/search.png";
 import yellowspiral from "../assets/yellow-spiral.png";
 import whitespiral from "../assets/white-spiral.png";
-import Header from "../components/Header";
 import LogoTicker from "../components/LogoTicker";
 import whiteTorus from "../assets/white-circle.png";
 import yellowPill from "../assets/yellow-rectangle.png";
@@ -20,7 +19,6 @@ import GrowthHeroSection from "../components/GrowthHeroSection";
 
 import CreatorCtaSection from "../components/creator/CreatorCtaSection";
 import TestimonialsSection from "../components/TestimonialsSection";
-import Footer from "../components/Footer";
 import { useNavigate } from "react-router-dom";
 import CategorySection from "../components/catagory/CategorySection";
 import CreateManageSection from "../components/creator/CreateManageSection";

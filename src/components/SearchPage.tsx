@@ -10,7 +10,7 @@ import CourseCard from "./courseComponent/CourseCard";
 import Pagination from "./Pagination";
 import { useCategoryList } from "../hooks/useCategoryList";
 
-const INITIAL_VISIBLE_COUNT = 18;
+
 
 const TARGET_CATEGORIES = [
   "Featured",
@@ -28,7 +28,7 @@ export const SearchPage: React.FC<CourseGridProps> = ({
   columns = "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3",
   onCourseClick,
 }) => {
-  const { courses, loading, error } = useCourses();
+  const { courses } = useCourses();
   const [searchQuery, setSearchQuery] = useState("");
 
   const navigate = useNavigate();
@@ -40,7 +40,7 @@ export const SearchPage: React.FC<CourseGridProps> = ({
 
   const options = ["Courses", "E-Books", "Software", "Bundles"];
   const [activeCategory, setActiveCategory] = useState<string>("Featured");
-  const [showAll, setShowAll] = useState<boolean>(false);
+
 
 const displayedCategories = categoryList.filter((category) =>
     TARGET_CATEGORIES.includes(category.name)
@@ -80,14 +80,7 @@ const displayedCategories = categoryList.filter((category) =>
     }
   };
 
-  const handleFollow = () => {
-    navigate("/follow");
-  };
 
-  const handleSearch = () => {
-    console.log("catch the search input value:-----", searchQuery);
-    navigate("/search-page");
-  };
 
   return (
     <div className="w-full bg-white">

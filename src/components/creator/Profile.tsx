@@ -10,7 +10,7 @@ export const Profile: React.FC<CourseGridProps> = ({
   columns = "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3",
   onCourseClick,
 }) => {
-  const { courses, loading, error } = useCourses();
+  const { courses } = useCourses();
 
   const navigate = useNavigate();
 
